@@ -1,0 +1,70 @@
+@import "./colors";
+@import "./typograpy";
+
+.home {
+  &__hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    background-color: $color-black-100;
+
+    .h1 {
+      color: $color-white;
+    }
+  }
+
+  &__featured {
+    background-color: $color-red;
+    padding: 4rem 0;
+    .h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      column-gap: 1rem;
+    }
+  }
+
+  &__newprojects {
+    padding: 2rem 0;
+    .h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  }
+
+  &__video {
+    background-color: $color-red-100;
+    &-wrapper {
+      display: grid;
+      place-content: center;
+      width: 100%;
+      height: 25rem;
+    }
+  }
+
+  &__counter {
+    padding: 3rem 0;
+    &-item {
+      text-align: center;
+      &s {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0 6rem;
+      }
+
+      img {
+        margin: 0 auto 1rem;
+      }
+
+      span {
+        font: normal 2rem/1.5 Arial, sans-serif;
+      }
+    }
+  }
+}

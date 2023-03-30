@@ -1,0 +1,113 @@
+@import "./colors";
+@import "./typograpy";
+
+.bussines {
+  &__hero {
+    position: relative;
+    width: 100%;
+    height: 25rem;
+    padding: 0 0 5rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    &-copy {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      column-gap: 2rem;
+      height: 100%;
+      .h1 {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__loop {
+    &-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+      column-gap: 1.2rem;
+      row-gap: 2rem;
+      padding: 5rem 0;
+    }
+
+    &-item {
+      position: relative;
+
+      figure {
+        margin: 0;
+      }
+
+      .status {
+        position: absolute;
+        top: 1rem;
+        right: 0;
+        padding: .3rem .8rem;
+        color: $color-white;
+        font: 600 .8rem/1 Arial, sans-serif;
+        background: $color-red;
+        z-index: 1;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        background-color: $color-black-100;
+      }
+
+      .view {
+        display: inline-block;
+        padding: 0.3rem 1rem;
+        color: $color-white;
+        border: 1px solid $color-white;
+        text-transform: uppercase;
+      }
+
+      .name {
+        font: 600 1.2rem/1 Arial, sans-serif;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .text {
+        color: $color-white;
+        margin-bottom: 0.2rem;
+      }
+
+      .metro {
+        display: block;
+        border-bottom: 1px dashed $color-white;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;
+        color: $color-yellow;
+      }
+
+      .price {
+        font: 600 1.2rem/1 Arial, sans-serif;
+        color: $color-yellow;
+      }
+    }
+  }
+}
