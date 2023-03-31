@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  padding: 2rem 0;
+  padding: 5rem 0 1rem;
   background-position: center center;
   background-size: cover;
 
@@ -24,28 +24,9 @@
     height: 100%;
   }
 
-  &__wrapper {
-  }
-
-  &__top {
-    position: relative;
-    max-width: 60rem;
-    text-align: center;
-    margin: 0 auto 3rem;
-    padding: 0 0 3rem;
-    border-bottom: 0.1rem solid $color-white;
-
-    .h3 {
-      margin-bottom: 0.5rem;
-    }
-
-    .text {
-      color: $color-white;
-    }
-  }
-
   &__bottom {
     position: relative;
+    margin-bottom: 2rem;
 
     a {
       text-decoration: none;
@@ -56,6 +37,12 @@
       display: grid;
       grid-template-columns: 1fr 2fr 1fr;
       column-gap: 1rem;
+    }
+
+    &-left {
+      .menu__item {
+        padding: 0.1rem 0;
+      }
     }
 
     &-center {
@@ -71,27 +58,31 @@
 
       input[type="text"],
       input[type="email"] {
-        width: 13rem;
+        width: 15rem;
         height: 2rem;
         margin-bottom: 0.5rem;
         padding: 0 0 0 1rem;
-        border-bottom: .1rem solid $color-white;
+        border-bottom: 0.1rem solid $color-white;
 
         &::-webkit-input-placeholder {
           color: $color-white;
+          opacity: 1;
         }
         &::-moz-placeholder {
           color: $color-white;
+          opacity: 1;
         }
         &:-ms-input-placeholder {
           color: $color-white;
+          opacity: 1;
         }
       }
 
       input[type="submit"] {
         margin-top: 1rem;
-        padding: 0.2rem 1.5rem;
+        padding: 0.2rem 2rem;
         color: $color-red;
+        font-weight: 600;
         border: 0.1rem solid $color-red;
         background: transparent;
       }
@@ -106,6 +97,12 @@
     &-right {
       text-align: right;
       color: $color-white;
+
+      a {
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center;
+      }
 
       .h3 {
         margin-bottom: 0.5rem;
@@ -132,7 +129,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        row-gap: 1rem;
+        row-gap: 0.3rem;
         div {
           display: flex;
           column-gap: 1rem;
@@ -148,6 +145,25 @@
       }
     }
 
+    &-contact {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-end;
+      column-gap: 1rem;
+
+      .h3 {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-social {
+      padding-top: 1rem;
+      display: flex;
+      column-gap: 2rem;
+    }
+
     &-copy {
       position: relative;
 
@@ -160,7 +176,8 @@
         flex-direction: row;
         column-gap: 1rem;
         justify-content: center;
-        margin-bottom: 1rem;
+        align-items: center;
+        margin-bottom: 0;
         padding: 0;
         color: $color-white;
       }

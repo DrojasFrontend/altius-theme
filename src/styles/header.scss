@@ -6,11 +6,29 @@
 
   &__top {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     text-align: center;
     color: $color-white;
-    background-color: $color-black;
+    background-color: $color-red;
+
+    &-phone {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1rem;
+        font: 400 1.75rem/1 "Roboto", sans-serif;
+      }
+    }
+
+    &-social {
+      display: flex;
+      column-gap: 2.5rem;
+      align-items: center;
+    }
   }
 
   a {
@@ -28,21 +46,26 @@
 
   &__bottom {
     position: fixed;
-    top: 2.125rem;
+    top: 4.5rem;
     left: 0;
     width: 100%;
+    padding: .5rem 0;
+    transition: all 0.8s ease-in-out;
 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 1rem;
-    transition: all 0.4s ease-in-out;
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 61rem;
+      margin: 0 auto;
+      column-gap: 1rem;
+    }
 
     &.fixed {
       top: 0;
-      background-color: $color-black;
+      background-color: $color-red;
     }
   }
 
@@ -96,7 +119,7 @@
     // level 2
     &-submenu {
       position: absolute;
-      top: -100%;
+      top: -99%;
       left: 100%;
       width: max-content;
       margin-top: -0.25rem;
@@ -130,7 +153,7 @@
 
       &-submenu {
         position: absolute;
-        top: -100%;
+        top: -94%;
         left: 100%;
         width: max-content;
         margin-top: -0.3rem;

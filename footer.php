@@ -11,6 +11,7 @@
  * @since Altius Theme 1.0
  */
 
+ $option_fields = get_fields( 'page_footer' );
 ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
@@ -20,19 +21,12 @@
 
 	<style>
 		.footer::before {
-			background: #000000a6;
+			background: #000000c4;
 		}
 	</style>
-	<footer class="footer" style="background-image: url(<?= IMG_BASE; ?>1440x600@2x.png)">
+	<footer class="footer" style="background-image: url(<?= $option_fields['footer_bckg']['url'] ?>">
 		<div class="container">
 			<div class="footer__wrapper">
-				<div class="footer__top">
-					<h3 class="h3">Sobre nosotros</h3>
-					<p class="text">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, magnam fugit. Molestiae vel id quod, nostrum in ipsa saepe. Assumenda libero aliquam, quasi perferendis magni repellat! Cupiditate in hic asperiores!
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, magnam fugit. Molestiae vel id quod, nostrum in ipsa saepe. Assumenda libero aliquam, quasi perferendis magni repellat! Cupiditate in hic asperiores!
-					</p>
-				</div>
 				<div class="footer__bottom">
 					<div class="footer__bottom-wrapper">
 						<div class="footer__bottom-left">
@@ -48,6 +42,25 @@
 							<?php if ( is_active_sidebar( 'footer_widget_2' ) ) : ?>
 								<?php dynamic_sidebar( 'footer_widget_2' ); ?>
 							<?php endif; ?>
+							<div class="footer__bottom-contact">
+								<h3 class="h3">
+									Contacto
+								</h3>
+								<?php foreach ($option_fields['repeater_contact'] as $key => $item) : ?>
+									<a href="<?= $item['repeater_contact_link']; ?>" target="blank">
+										<img src="<?= $item['repeater_contact_icon']; ?>" alt="<?= $item['repeater_contact_text']; ?>">
+										<?= $item['repeater_contact_text']; ?>
+									</a>
+								<?php endforeach; ?>
+
+								<div class="footer__bottom-social">
+									<?php foreach ($option_fields['repeater_social'] as $key => $item) : ?>
+										<a href="<?= $item['repeater_social_link']; ?>" target="blank">
+											<img src="<?= $item['repeater_social_icon']; ?>" alt="Social">
+										</a>
+									<?php endforeach; ?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

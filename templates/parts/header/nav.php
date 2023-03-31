@@ -3,7 +3,7 @@ class MainNavWalker extends Walker_Nav_Menu {
   function display_element($item, &$children_elements, $max_depth, $depth, $args, &$output) {
     if ($max_depth == 0) { ?>
       <div class="menu__item">
-        <a class="menu__item-link" href="<?php echo $item->url; ?>">
+        <a class="menu__item-link text-bold" href="<?php echo $item->url; ?>">
           <?php echo $item->title ?>
           <!-- <?php if (isset($children_elements[$item->ID])) { ?>
             <svg class="navbar__arrow">
