@@ -9,7 +9,6 @@ deployment:
     - /bin/cp footer.php $DEPLOYPATH
     - /bin/cp functions.php $DEPLOYPATH
     - /bin/cp header.php $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp index.php $DEPLOYPATH
     - /bin/cp screenshot.png $DEPLOYPATH
-    - /bin/cp single.php $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
