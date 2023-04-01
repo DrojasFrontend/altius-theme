@@ -1,0 +1,16 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/nuevoaltiuscom/public_html/wp-content/theme/altius-theme/
+    - /bin/cp assets $DEPLOYPATH
+    - /bin/cp inc $DEPLOYPATH
+    - /bin/cp src $DEPLOYPATH
+    - /bin/cp templates $DEPLOYPATH
+    - /bin/cp 404.php $DEPLOYPATH
+    - /bin/cp footer.php $DEPLOYPATH
+    - /bin/cp function.php $DEPLOYPATH
+    - /bin/cp header.php $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp screenshot.png $DEPLOYPATH
+    - /bin/cp single.php $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
