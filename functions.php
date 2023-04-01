@@ -1,4 +1,3 @@
-
 <?php
   $templateUrl = base_url();
   $templatePath = get_template_directory();

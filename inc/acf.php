@@ -8,22 +8,20 @@
   if(function_exists('acf_add_options_page')) {
     acf_add_options_page(
       [
+        'page_title' => 'Header',
+        'menu_title' => 'Header',
+        'menu_slug'  => 'page-header',
+        'post_id'    => 'page_header'
+      ]
+    );
+    acf_add_options_page(
+      [
         'page_title' => 'Footer',
         'menu_title' => 'Footer',
         'menu_slug'  => 'page-footer',
         'post_id'    => 'page_footer'
       ]
     );
-  
-   /*  acf_add_options_page(
-      [
-        'page_title' => 'Contacto Opciones',
-        'menu_title' => 'Contacto Opciones',
-        'menu_slug'  => 'contact-options',
-        'post_id'    => 'contact_options'
-      ]
-    ); */
-  
    /*  acf_add_options_page(
       [
         'page_title' => 'Theme options',

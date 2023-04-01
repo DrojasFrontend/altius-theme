@@ -1,8 +1,11 @@
 <?php
 class MainNavWalker extends Walker_Nav_Menu {
   function display_element($item, &$children_elements, $max_depth, $depth, $args, &$output) {
+    $current_page_id = get_queried_object_id();
+    $is_current_page = ($item->object_id == $current_page_id);
+
     if ($max_depth == 0) { ?>
-      <div class="menu__item">
+      <div class="menu__item <?php echo $is_current_page ? 'current-menu-item' : ''; ?>">
         <a class="menu__item-link text-bold" href="<?php echo $item->url; ?>">
           <?php echo $item->title ?>
           <!-- <?php if (isset($children_elements[$item->ID])) { ?>

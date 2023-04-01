@@ -1,5 +1,9 @@
 jQuery(function ($) {
 
+  if(jAnimation) {
+    jAnimation.load("body");
+  }
+
   if (jHeader) {
     jHeader.load("body");
   }
