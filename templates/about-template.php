@@ -6,30 +6,32 @@ Template Name: Nosotros
 
 get_header(); ?>
 
-<?php
-  // $fields = get_fields();
-
-  // Hero
-  // $hero = (object) [
-  //   'titleSup' => $fields['hero_title_sup'],
-  //   'title' => $fields['hero_title'],
-  //   'description' => $fields['hero_description'],
-  //   'videoUrl' => $fields['hero_video_url'] . '?controls=0'
-  // ];
-?>
-
   <section class="about__hero">
-    <?php get_template_part('templates/parts/about/hero'); ?>
+    <?php get_template_part('templates/parts/about/video'); ?>
   </section>
 
   <section class="about__content">
-    <div class="container">
-      <?php get_template_part('templates/parts/about/content'); ?>
-    </div>
+    <?php get_template_part('templates/parts/about/content'); ?>
   </section>
 
-  <section class="about__loop">
-    <?php get_template_part('templates/parts/about/loop'); ?>
+  <section class="about__banner">
+    <?php get_template_part('templates/parts/about/banner'); ?>
+  </section>
+
+  <section id="counter" class="about__counter">
+    <?php get_template_part('templates/parts/about/counter'); ?>
+  </section>
+
+  <section class="about__world">
+    <?php get_template_part('templates/parts/about/world'); ?>
+  </section>
+
+  <section class="about__brand">
+    <?php get_template_part('templates/parts/about/brand'); ?>
+  </section>
+
+  <section class="about__mision">
+    <?php get_template_part('templates/parts/about/mision'); ?>
   </section>
 
 <?php get_footer(); ?>

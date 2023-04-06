@@ -34,9 +34,14 @@
 							<?php get_template_part( 'templates/parts/footer/nav' ); ?>
 						</div>
 						<div class="footer__bottom-center">
-							<?php if ( is_active_sidebar( 'footer_widget' ) ) : ?>
+							<!-- <?php if ( is_active_sidebar( 'footer_widget' ) ) : ?>
 								<?php dynamic_sidebar( 'footer_widget' ); ?>
-							<?php endif; ?>
+							<?php endif; ?> -->
+							<div class="footer__bottom-copy">
+								<?php if ( is_active_sidebar( 'footer_widget_3' ) ) : ?>
+									<?php dynamic_sidebar( 'footer_widget_3' ); ?>
+								<?php endif; ?>
+							</div>
 						</div>
 						<div class="footer__bottom-right">
 							<?php if ( is_active_sidebar( 'footer_widget_2' ) ) : ?>
@@ -66,8 +71,8 @@
 				</div>
 			</div>
 			<div class="footer__bottom-copy">
-				<?php if ( is_active_sidebar( 'footer_widget_3' ) ) : ?>
-					<?php dynamic_sidebar( 'footer_widget_3' ); ?>
+				<?php if ( is_active_sidebar( 'footer_widget_4' ) ) : ?>
+					<?php dynamic_sidebar( 'footer_widget_4' ); ?>
 				<?php endif; ?>
 			</div>
 		</div>

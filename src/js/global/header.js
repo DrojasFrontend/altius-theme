@@ -18,7 +18,6 @@ var jHeader = (function ($) {
   
   function scrollHide() {
     var st = window.pageYOffset || document.documentElement.scrollTop;
-    console.log(st);
     if (st > lastScrollTop) {
       header.classList.add('hide');
     } else {

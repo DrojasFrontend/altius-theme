@@ -59,6 +59,16 @@ if ( ! function_exists( 'altius_theme_setup' ) ) {
 				'before_title'  => '<h3 class="h3">',
 				'after_title'   => '</h3>',
 			));
+
+			register_sidebar( array(
+				'name'          => __( 'Footer Widget 4', 'altium_theme' ),
+				'id'            => 'footer_widget_4',
+				'description'   => __( 'Widget para el pie de página.', 'altium_theme' ),
+				'before_widget' => '<div class="widget-footer">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="h3">',
+				'after_title'   => '</h3>',
+			));
 		}
 		add_action( 'widgets_init', 'registrar_widget_footer' );
 

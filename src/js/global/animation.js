@@ -9,6 +9,14 @@ var jAnimation = (function ($) {
   
   setTimeout(() => {
     $("#letter-animation").addClass("letter-animation");
+    
+    
   }, 1000);
+
+  $.when(
+    $("[data-text-left-right]").addClass("text-left-to-right")
+  ).then(function() {
+    $(".line-animate").addClass("active");
+  });
 
 })(jQuery);

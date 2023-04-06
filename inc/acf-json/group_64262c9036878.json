@@ -101,6 +101,24 @@
         },
         {
             "key": "field_64263e788b643",
+            "label": "Hover Texto",
+            "name": "contact_form_hover",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ae262c",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_642b5591c27b3",
             "label": "Color texto",
             "name": "contact_form_color",
             "aria-label": "",
@@ -139,6 +157,27 @@
             "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
+                {
+                    "key": "field_642ba26e76a33",
+                    "label": "Link",
+                    "name": "repeater_phone_link",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_642639b29f91c"
+                },
                 {
                     "key": "field_64263a409f91d",
                     "label": "Icono",
@@ -449,5 +488,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680298390
+    "modified": 1680581260
 }

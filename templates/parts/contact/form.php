@@ -6,6 +6,10 @@
   .contact__form-bckg:before {
     background: transparent linear-gradient(180deg, <?= $fields['contact_form_bckg'] ?>00 0%, <?= $fields['contact_form_bckg'] ?> 100%) 0% 0% no-repeat padding-box;
   }
+
+  .contact__form-social a:hover {
+    color: <?= $fields['contact_form_hover'] ?> !important;
+  }
 </style>
 
 <div class="contact__form-bckg" style="background-color: <?= $fields['contact_form_bckg'] ?>">
@@ -16,7 +20,7 @@
           <?php foreach ($fields['repeater_phone'] as $key => $item) : ?>
             <div class="contact__form-social">
               <img class="" src="<?= $item['repeater_phone_icon'] ?>" alt="" width="" height="" loading="lazy">
-              <a href="#" class="number" style="color: <?= $fields['contact_form_color'] ?>"><?= $item['repeater_phone_number'] ?></a>
+              <a href="<?= $item['repeater_phone_link'] ?>" class="number" style="color: <?= $fields['contact_form_color'] ?>" target="_blank"><?= $item['repeater_phone_number'] ?></a>
             </div>
           <?php endforeach; ?>
         <?php endif; ?>

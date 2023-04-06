@@ -36,7 +36,7 @@
       text-align: center;
 
       .h1 {
-        width: 48rem;
+        width: 63rem;
         margin: 0 auto;
         opacity: 0;
         font-weight: 400;
@@ -157,6 +157,12 @@
         text-decoration: none;
         color: $color-black;
         font-weight: 300;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+          padding-left: 1rem;
+          font-weight: 600;
+        }
       }
     }
 

@@ -3,7 +3,7 @@ var jCounter = (function ($) {
 
   $(window).scroll(function() {
     var $counterDiv = $('#counter');
-    if (!executed && $counterDiv.hasClass('home__counter') && isInViewport($counterDiv)) {
+    if (!executed && $counterDiv.hasClass('home__counter') || $counterDiv.hasClass('about__counter') && isInViewport($counterDiv)) {
       executed = true;
       $('.count').each(function () {
         $(this).prop('Counter',0).animate({

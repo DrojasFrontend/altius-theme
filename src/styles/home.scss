@@ -3,67 +3,366 @@
 
 .home {
   &__hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     width: 100%;
-    height: 90vh;
-    background-color: $color-black-100;
+    height: 110vh;
+    padding-top: 5rem;
+    overflow: hidden;
 
-    .h1 {
-      color: $color-white;
+    .swiper {
+      &-hero {
+        height: 100%;
+      }
+
+      &-pagination {
+        position: relative;
+        display: flex;
+        margin-top: 1rem;
+
+        &-bullet {
+          width: 3.5rem;
+          height: 0.4rem;
+          border-radius: 0;
+          background: $color-white;
+          opacity: 1;
+
+          &-active {
+            background: $color-red;
+          }
+        }
+      }
+    }
+
+    figure {
+      height: 100%;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-center {
+      position: absolute;
+      top: 65vh;
+      left: 50%;
+      width: 100%;
+      z-index: 9;
+      transform: translate(-50%, -50%);
+    }
+
+    &-copy {
+      position: relative;
+      max-width: 70rem;
+      margin: 0 auto;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      z-index: 9;
+
+      .h1,
+      p {
+        color: $color-white;
+      }
+
+      p {
+        font: 500 1.5rem/1 "Roboto", sans-serif;
+        text-transform: uppercase;
+        margin: 5rem 0 0 3rem;
+      }
+    }
+
+    .line-animate {
+      position: absolute;
+      bottom: -1.5rem;
+      left: 1rem;
+
+      .svg-elem-1 {
+        stroke-dashoffset: 3575.392822265625px;
+        stroke-dasharray: 3575.392822265625px;
+        fill: transparent;
+        -webkit-transition: stroke-dashoffset 1s
+            cubic-bezier(0.47, 0, 0.745, 0.715) 0s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
+        transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
+      }
+
+      .svg-elem-2 {
+        stroke-dashoffset: 1713.429931640625px;
+        stroke-dasharray: 1713.429931640625px;
+        -webkit-transition: stroke-dashoffset 1s
+            cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+        transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+            0.12s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+      }
+
+      .svg-elem-3 {
+        stroke-dashoffset: 49.27885055541992px;
+        stroke-dasharray: 49.27885055541992px;
+        fill: transparent;
+        -webkit-transition: stroke-dashoffset 1s
+            cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
+        transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+            0.24s,
+          fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
+      }
+
+      &.active {
+        .svg-elem-1 {
+          stroke-dashoffset: 0;
+          fill: $color-white;
+        }
+
+        .svg-elem-2 {
+          stroke-dashoffset: 0;
+        }
+
+        .svg-elem-3 {
+          stroke-dashoffset: 0;
+          fill: $color-white;
+        }
+      }
     }
   }
 
   &__featured {
     background-color: $color-red;
-    padding: 4rem 0;
-    .h2 {
-      margin-bottom: 2rem;
-      text-align: center;
+
+    &-bckg {
+      position: relative;
+      padding: 5rem 0;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1.9rem;
+        width: 100%;
+        height: 1.875rem;
+        z-index: 1;
+      }
     }
 
-    &-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-      column-gap: 1rem;
+    &-item {
+      width: 32.4%;
+      text-decoration: none;
+      overflow: hidden;
+
+      &s {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: 1rem;
+        row-gap: 3rem;
+      }
+
+      figure {
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+
+      img {
+        transition: transform 0.4s ease;
+      }
+
+      .h3 {
+        position: relative;
+        display: grid;
+        place-content: center;
+        min-height: 5.75rem;
+        text-align: center;
+        color: $color-white;
+        padding: 1rem 0.5rem;
+        font-weight: 500;
+        letter-spacing: -0.015rem;
+        z-index: 1;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 0.6875rem;
+          background-color: $color-red;
+          z-index: -1;
+          transition: all 0.4s ease;
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+        .h3 {
+          &:before {
+            height: 10rem;
+          }
+        }
+      }
     }
   }
 
   &__newprojects {
-    padding: 2rem 0;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 7rem;
+      height: 100%;
+      z-index: 2;
+    }
+
+    &:before {
+      left: 0;
+      background: transparent
+        linear-gradient(270deg, #29292900 0%, #292929 100%) 0% 0% no-repeat;
+    }
+
+    &:after {
+      right: 0;
+      background: transparent linear-gradient(90deg, #29292900 0%, #292929 100%)
+        0% 0% no-repeat;
+    }
+
+    &-bckg {
+      padding: 3rem 0 0;
+    }
+
     .h2 {
       margin-bottom: 2rem;
       text-align: center;
     }
-  }
 
-  &__video {
-    background-color: $color-red-100;
-    &-wrapper {
-      display: grid;
-      place-content: center;
+    figure {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .swiper {
+      &-hero {
+        height: 100%;
+      }
+      &-slide {
+        position: relative;
+
+        &:hover {
+          .home__newprojects-img {
+            transform: translateX(-1rem);
+          }
+
+          .home__newprojects-icon {
+            opacity: 1;
+            visibility: visible;
+
+            img {
+              transform: scale(1);
+            }
+          }
+        }
+      }
+
+      &-button {
+        &-prev,
+        &-next {
+          border: 0;
+          background-color: transparent;
+          &:after {
+            font-size: 0;
+          }
+        }
+      }
+
+      &-pagination {
+        &-bullet {
+          width: 1.6rem;
+          height: 1.6rem;
+          margin: 0 0.5rem !important;
+          background: rgba(242, 239, 239, 0.7);
+          opacity: 1;
+
+          &-active {
+            background: $color-red;
+          }
+        }
+      }
+    }
+
+    &-actions {
+      position: absolute;
       width: 100%;
-      height: 25rem;
+      bottom: 1.5rem;
+    }
+
+    &-img {
+      transition: all 0.2s ease-in-out;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      background-color: $color-black-100;
+      transition: all 0.4s ease-in-out;
+
+      img {
+        width: 8rem;
+        transform: scale(0.9);
+        transition: all 0.4s ease-in-out;
+      }
     }
   }
 
   &__counter {
-    padding: 3rem 0;
+    &-bckg {
+      display: grid;
+      place-content: center;
+      height: 22rem;
+      padding: 2rem 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
     &-item {
       text-align: center;
       &s {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        padding: 0 6rem;
+        column-gap: 3rem;
+        padding: 0 1rem;
       }
 
       img {
         margin: 0 auto 1rem;
       }
 
-      span {
-        font: normal 2rem/1.5 Arial, sans-serif;
+      .number {
+        font: 300 5rem/1 "Roboto", sans-serif;
+        color: #ffb400;
+      }
+
+      p {
+        font: normal 2rem/1.2 "Roboto", sans-serif;
+        color: $color-white;
       }
     }
   }

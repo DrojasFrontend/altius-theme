@@ -108,3 +108,16 @@ textarea {
 .wpcf7-response-output {
   color: $color-red;
 }
+
+.text-left-to-right {
+  animation: textLeftRight 2s forwards;
+}
+
+@keyframes textLeftRight {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}

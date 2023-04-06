@@ -37,4 +37,10 @@
     wp_enqueue_script('mainJs', JS_BASE . 'main.js', array('jqueryJs'), VERSION, true);
   }
   add_action('wp_enqueue_scripts', 'enqueue_style_scripts');
+
+  /* function add_custom_scripts() {
+    wp_register_script( 'map-script', JS_BASE . 'libs/map.js', array('jquery'), false, true );
+    wp_enqueue_script( 'map-script' );
+  }
+  add_action( 'wp_enqueue_scripts', 'add_custom_scripts' ); */
 ?>
