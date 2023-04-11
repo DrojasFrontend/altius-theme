@@ -18,7 +18,7 @@ get_header(); ?>
     <?php get_template_part('templates/parts/home/newprojects'); ?>
   </section>
 
-  <section id="counter" class="home__counter">
+  <section id="counter" class="home__counter init__counter">
     <?php get_template_part('templates/parts/home/counter'); ?>
   </section>
 

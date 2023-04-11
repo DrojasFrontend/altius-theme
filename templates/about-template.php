@@ -18,7 +18,11 @@ get_header(); ?>
     <?php get_template_part('templates/parts/about/banner'); ?>
   </section>
 
-  <section id="counter" class="about__counter">
+  <section class="about__mision">
+    <?php get_template_part('templates/parts/about/mision'); ?>
+  </section>
+
+  <section id="counter" class="about__counter init__counter">
     <?php get_template_part('templates/parts/about/counter'); ?>
   </section>
 
@@ -28,10 +32,6 @@ get_header(); ?>
 
   <section class="about__brand">
     <?php get_template_part('templates/parts/about/brand'); ?>
-  </section>
-
-  <section class="about__mision">
-    <?php get_template_part('templates/parts/about/mision'); ?>
   </section>
 
 <?php get_footer(); ?>

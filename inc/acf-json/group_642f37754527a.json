@@ -1,10 +1,10 @@
 {
-    "key": "group_642dd64090e4e",
-    "title": "Páginas",
+    "key": "group_642f37754527a",
+    "title": "Pagina Noticias",
     "fields": [
         {
-            "key": "field_642dd6fed4bda",
-            "label": "Encabezado",
+            "key": "field_642f377591dad",
+            "label": "Banner",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -20,9 +20,51 @@
             "endpoint": 0
         },
         {
-            "key": "field_642dd640c42ef",
-            "label": "Fondo Encabezado",
-            "name": "color_header",
+            "key": "field_642f37cc88b1a",
+            "label": "Banner",
+            "name": "news_banner",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "full"
+        },
+        {
+            "key": "field_642f386e41857",
+            "label": "Fondo",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_642f3843a0dba",
+            "label": "Fondo Página",
+            "name": "news_bckg_color_main",
             "aria-label": "",
             "type": "color_picker",
             "instructions": "",
@@ -33,31 +75,14 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "#292929",
             "enable_opacity": 0,
             "return_format": "string"
         },
         {
-            "key": "field_643443b216c86",
-            "label": "Footer",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_643443c6d3335",
-            "label": "Fondo Footer",
-            "name": "color_footer",
+            "key": "field_642f38a79d527",
+            "label": "Fondo Noticia Principal",
+            "name": "news_bckg_color",
             "aria-label": "",
             "type": "color_picker",
             "instructions": "",
@@ -68,7 +93,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "#AE262C",
+            "default_value": "#292929",
             "enable_opacity": 0,
             "return_format": "string"
         }
@@ -76,9 +101,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "page"
+                "value": "templates\/news-template.php"
             }
         ]
     ],
@@ -91,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681147917
+    "modified": 1680885453
 }

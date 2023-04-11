@@ -27,7 +27,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header">
+<header class="header<?php if(is_page('nosotros')) { echo ' nosotros'; } ?>">
 	<?php get_template_part('templates/parts/header/header'); ?>
 </header>
 

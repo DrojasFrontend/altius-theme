@@ -21,11 +21,26 @@ var jSwiper = (function($) {
     direction: 'horizontal',
     slidesPerView: 1,
     spaceBetween: 0,
+    autoplay: {
+      delay: 3000,
+    },
   
     pagination: {
       el: '.swiper-pagination',
       draggable: true,
       clickable: true
+    },
+  
+  });
+
+  const swiperSingle = new Swiper('.swiper-single', {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 0,
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
   
   });

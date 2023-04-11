@@ -9,6 +9,21 @@
   transition: all 0.8s ease-in-out;
   z-index: 20;
 
+  &.nosotros {
+    position: relative;
+    &.hide,
+    &.default {
+      transform: translateY(0%);
+    }
+
+    .header__top {
+      &.hide {
+        top: 0;
+        opacity: 1;
+      }
+    }
+  }
+
   &.default {
     transform: translateY(-52px);
     background-color: $color-red;

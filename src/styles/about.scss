@@ -260,10 +260,18 @@
         li {
           text-align: center;
           list-style: none;
+
+          &:hover {
+            img {
+              transform: translateY(-20px);
+            }
+          }
         }
 
         img {
           margin: 0 auto 1.5rem;
+          height: 5rem;
+          transition: transform .2s ease;
         }
 
         .text {

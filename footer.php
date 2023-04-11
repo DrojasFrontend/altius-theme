@@ -19,11 +19,20 @@
 
 	
 
-	<style>
-		.footer::before {
-			background: #000000c4;
-		}
-	</style>
+	<?php 
+		if(is_front_page() || is_home()) { ?>
+			<style>
+				.footer::before {
+					background: #f0000075;
+				}
+
+				.footer .h3 {
+					color: #ffffff;
+				}
+			</style>
+
+		<?php }
+	?>
 	<footer class="footer" style="background-image: url(<?= $option_fields['footer_bckg']['url'] ?>">
 		<div class="container">
 			<div class="footer__wrapper">
@@ -70,7 +79,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer__bottom-copy">
+			<div class="footer__bottom-legal">
 				<?php if ( is_active_sidebar( 'footer_widget_4' ) ) : ?>
 					<?php dynamic_sidebar( 'footer_widget_4' ); ?>
 				<?php endif; ?>

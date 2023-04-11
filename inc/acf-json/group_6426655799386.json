@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_64266557dad09",
-            "label": "Fondo",
+            "label": "Fondo Imagen",
             "name": "footer_bckg",
             "aria-label": "",
             "type": "image",
@@ -25,7 +25,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "full"
         },
         {
             "key": "field_64267ce717a48",
@@ -229,5 +229,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680247549
+    "modified": 1681147880
 }

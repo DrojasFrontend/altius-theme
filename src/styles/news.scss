@@ -1,0 +1,324 @@
+@import "./colors";
+@import "./typograpy";
+
+.news {
+  &__banner {
+    position: relative;
+    &-bckg {
+      width: 100%;
+      height: 40rem;
+      padding: 0 0 8rem;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    &-copy {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      column-gap: 2rem;
+      height: 100%;
+      text-align: center;
+
+      .h1 {
+        width: 63rem;
+        margin: 0 auto;
+        opacity: 0;
+        color: $color-white;
+        white-space: nowrap;
+        overflow: hidden;
+
+        &.letter-animation {
+          opacity: 1;
+          animation: typing 2s, blink 0.1s;
+        }
+
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+        }
+
+        @keyframes blink {
+          100% {
+            border-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &__search {
+    &-form {
+      width: 43rem;
+      margin: 0 auto;
+      padding: 6rem 1rem;
+
+      form {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+      }
+
+      label {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &-bckg {
+      position: relative;
+
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1.875rem;
+        position: absolute;
+        top: -1.875rem;
+      }
+    }
+
+    &-submit {
+      display: grid;
+      place-content: center;
+      padding: 0.5rem;
+      border: 0;
+      background-color: $color-red;
+      cursor: pointer;
+    }
+
+    &-input,
+    select {
+      width: 100%;
+      height: 2.875rem;
+      border-radius: 0;
+      padding-left: 2rem;
+      border: 1px solid $color-black-100;
+      background-color: $color-white;
+    }
+  }
+
+  &__loop {
+    &-card {
+      &s {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8rem;
+        max-width: 76rem;
+        margin: 0 auto;
+        padding: 0 1rem 8rem;
+
+        .pagination {
+          display: flex;
+          grid-column: 1 / span 2;
+          justify-content: flex-end;
+          column-gap: 0.625rem;
+
+          .page-numbers {
+            font: 600 1.3rem/1 "Roboto", sans-serif;
+            display: grid;
+            place-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            text-decoration: none;
+            color: $color-black;
+            background-color: $color-white;
+
+            &.current {
+              color: $color-white;
+              background-color: $color-red;
+            }
+          }
+        }
+      }
+
+      &-bckg {
+        grid-column: 1 / span 2;
+        margin-bottom: 8rem;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 44rem;
+          background-color: $color-red;
+        }
+      }
+
+      &-main {
+        position: relative;
+
+        header {
+          display: flex;
+          align-items: flex-end;
+          column-gap: 1rem;
+          margin-bottom: 1rem;
+          color: $color-white;
+
+          h2 {
+            font: 600 2rem/1 "Roboto", sans-serif;
+            max-width: 35rem;
+            padding: 0.5rem 0 0.4rem;
+          }
+        }
+
+        &:hover {
+          .news__loop-card__image {
+            img {
+              transform: scale(1.2);
+            }
+
+            &::after {
+              bottom: 0;
+            }
+          }
+        }
+      }
+
+      &__date {
+        font: 600 1.9rem/0.8 Roboto, sans-serif;
+        width: 4.2rem;
+        padding: 2rem 0 0.7rem;
+        color: $color-white;
+        text-transform: uppercase;
+        background-color: $color-red;
+        text-align: center;
+
+        &.black {
+          background-color: $color-black;
+        }
+
+        .small {
+          font: 600 1rem/1 "Roboto", sans-serif;
+        }
+      }
+
+      &__image {
+        position: relative;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: 28rem;
+          object-fit: cover;
+          transition: all 0.4s ease;
+        }
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -4rem;
+          width: 100%;
+          height: 15rem;
+          background: transparent
+            linear-gradient(179deg, rgba(41, 41, 41, 0) 0, #292929 100%) 0 0
+            no-repeat;
+          transition: bottom 0.2s ease-in;
+        }
+      }
+
+      &__excerpt {
+        font: 500 1.7rem/1 "Roboto", sans-serif;
+        padding: 1rem;
+        background-color: $color-white;
+      }
+
+      &__link {
+        position: absolute;
+        left: 50%;
+        bottom: 2rem;
+        padding: 0.4rem 1rem 0.3rem;
+        color: $color-white;
+        border: 0.0625rem solid $color-white;
+        text-decoration: none;
+        transform: translate(-50%, 0%);
+        transition: background 0.2s ease-in-out;
+        z-index: 1;
+
+        &:hover {
+          border: 0.0625rem solid $color-red;
+          background-color: $color-red;
+        }
+      }
+    }
+
+    &-bottom {
+      margin-bottom: 4rem;
+      .news__loop-card {
+        &__image {
+          margin-bottom: 0.5rem;
+
+          img {
+            height: 15rem;
+          }
+          &::after {
+            display: none;
+          }
+        }
+
+        &__date {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: flex;
+          flex-direction: column;
+          padding: 0.7rem 0;
+        }
+
+        &__cat {
+          font: 500 1.3rem/1 "Roboto", sans-serif;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          padding: 0.5rem 3rem;
+          color: $color-white;
+          background-color: $color-red;
+        }
+
+        &__link {
+          display: inline-block;
+          position: relative;
+          left: 0;
+          bottom: 0;
+          padding: 0.4rem 1rem 0.3rem;
+          color: $color-white;
+          border: 0.0625rem solid $color-white;
+          text-decoration: none;
+          transform: none;
+          transition: background 0.2s ease-in-out;
+
+          &:hover {
+            border: 0.0625rem solid $color-red;
+            background-color: $color-red;
+          }
+        }
+      }
+
+      footer {
+        h2 {
+          font: 600 1.7rem/1 "Roboto", sans-serif;
+          color: $color-white;
+          margin-bottom: 0.7rem;
+        }
+
+        p {
+          font: 400 1.5rem/1 "Roboto", sans-serif;
+          color: $color-white;
+          margin-bottom: 1.5rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+}

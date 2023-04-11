@@ -1,0 +1,230 @@
+@import "./colors";
+@import "./typograpy";
+
+.new {
+  &__detail {
+    &-swiper {
+      position: relative;
+      width: 100%;
+      height: 40rem;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+      }
+
+      .title {
+        font: 600 2.5rem/1.3 "Roboto", sans-serif;
+        position: absolute;
+        left: 50%;
+        bottom: 10rem;
+        max-width: 40rem;
+        margin: 0 0 0 -16.5rem;
+        padding: 0;
+        color: $color-white;
+        transform: translate(-50%, 0);
+        z-index: 2;
+      }
+
+      .swiper {
+        &-button {
+          &-prev,
+          &-next {
+            border: 0;
+            background-color: transparent;
+            &:after {
+              font-size: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &-actions {
+      position: absolute;
+      width: 100%;
+      bottom: 4rem;
+    }
+
+    &-bckg {
+      position: relative;
+      background-color: $color-black;
+      &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 8rem;
+        position: absolute;
+        top: -8rem;
+        background: transparent
+          linear-gradient(180deg, #29292900 0%, #292929 100%) 0% 0% no-repeat
+          padding-box;
+        z-index: 1;
+      }
+    }
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      max-width: 65rem;
+      margin: 0 auto;
+      padding: 0 1rem 5rem;
+      column-gap: 2.5rem;
+    }
+
+    &-copy {
+      margin-bottom: 2rem;
+      padding: 3rem 1rem 1rem;
+      color: $color-white;
+      background-color: $color-red;
+
+      h3 {
+        font-weight: 400;
+        margin: 0 0 1rem !important;
+        padding-left: 2rem;
+      }
+
+      p {
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &-content {
+      p {
+        margin-bottom: 1rem;
+        text-align: justify;
+      }
+
+      .text {
+        color: $color-white;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font: 600 1.875rem/1 "Roboto", sans-serif;
+        margin: 2.5rem 0 2rem;
+        padding-left: 2rem;
+      }
+
+      &__link {
+        padding: 1rem 2rem;
+        background-color: $color-red;
+
+        .h3 {
+          margin: 0;
+          color: $color-white;
+        }
+
+        a {
+          color: $color-white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &-sidebar {
+      .section {
+        padding: 1rem;
+        background-color: $color-white-100;
+        margin-bottom: 2rem;
+      }
+
+      h3 {
+        color: $color-red;
+        margin-bottom: 1rem;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      input[type="search"] {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        border: 0.0625rem solid #707070;
+        background-color: $color-white;
+      }
+
+      button {
+        display: inline-block;
+        width: max-content;
+        padding: 0.5rem 1.5rem;
+        border: 0;
+        border-bottom: 0.3rem solid #661a1d;
+        color: $color-white;
+        background-color: $color-red;
+        cursor: pointer;
+      }
+
+      .sidebar-widget-single {
+        margin-bottom: 1rem;
+
+        br {
+          display: none;
+        }
+
+        p {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          align-items: center;
+
+          a {
+            display: flex;
+            justify-content: center;
+          }
+        }
+      }
+
+      .latest-news {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.0625rem dashed $color-black;
+
+        &:last-child {
+          margin: 0;
+          padding: 0;
+          border-bottom: none;
+        }
+
+        .date {
+          font: 600 1rem/1.3 "Roboto", sans-serif;
+          margin: 0.3rem 0 1rem;
+          color: $color-red;
+          text-transform: uppercase;
+        }
+
+        .excerpt {
+          margin-bottom: 1rem;
+        }
+
+        .link {
+          display: block;
+          padding: 0.3rem 1rem;
+          max-width: max-content;
+          margin: 0 auto;
+          color: $color-red;
+          border: 0.0625rem solid $color-red;
+          text-decoration: none;
+          transition: all 0.3s ease-in;
+
+          &:hover {
+            color: $color-white;
+            border-color: $color-red;
+            background-color: $color-red;
+          }
+        }
+      }
+    }
+  }
+}

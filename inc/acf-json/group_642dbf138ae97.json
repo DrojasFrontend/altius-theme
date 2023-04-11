@@ -174,7 +174,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "full"
         },
         {
             "key": "field_642de1c92108c",
@@ -234,7 +234,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "full"
         },
         {
             "key": "field_642de4c149cf1",
@@ -428,7 +428,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "medium",
+                    "preview_size": "full",
                     "parent_repeater": "field_642e0778ab44f"
                 }
             ]
@@ -533,7 +533,7 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": "",
-                    "preview_size": "medium",
+                    "preview_size": "full",
                     "parent_repeater": "field_642e0cde6bdc9"
                 },
                 {
@@ -775,5 +775,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680747785
+    "modified": 1680885407
 }

@@ -28,5 +28,4 @@ $fields = get_fields();
       <img class="" src="<?= IMG_BASE; ?>icons/icon-next.svg" alt="image-1" width="" height="" loading="lazy">
     </button>
   </div>
-  
 </div>

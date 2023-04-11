@@ -25,3 +25,10 @@ add_action( 'wp_enqueue_scripts', 'remove_global_styles' );
 function remove_global_styles(){
   wp_dequeue_style( 'global-styles' );
 }
+
+function dequeue_wp_block_library_css() {
+  if (!is_admin()) {
+    wp_dequeue_style('wp-block-library');
+  }
+}
+add_action('wp_enqueue_scripts', 'dequeue_wp_block_library_css');
