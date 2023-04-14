@@ -14,9 +14,9 @@ get_header(); ?>
     <?php get_template_part('templates/parts/contact/form'); ?>
   </section>
 
-<!--   <section class="contact__map">
+  <section class="contact__map">
     <?php get_template_part('templates/parts/contact/map'); ?>
-  </section> -->
+  </section>
 
   <!-- <section class="contact__showroom">
     <?php get_template_part('templates/parts/contact/showroom'); ?>

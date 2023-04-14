@@ -22,6 +22,7 @@
 	<meta name="description" content="<?php echo get_the_excerpt(); ?>" />
 
 	<?php wp_head(); ?>
+	
 </head>
 
 <body <?php body_class(); ?>>

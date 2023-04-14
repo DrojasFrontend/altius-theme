@@ -4,6 +4,10 @@ jQuery(function ($) {
     jAnimation.load("body");
   }
 
+  if(jSearchFilter) {
+    jSearchFilter.load(".filter");
+  }
+
   if (jHeader) {
     jHeader.load("body");
   }
@@ -17,4 +21,5 @@ jQuery(function ($) {
   if(jSwiper && $swiperClass.length) {
     jSwiper.load($swiperClass);
   }
+
 });

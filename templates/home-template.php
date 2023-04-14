@@ -22,4 +22,8 @@ get_header(); ?>
     <?php get_template_part('templates/parts/home/counter'); ?>
   </section>
 
+  <section class="contact__map">
+    <?php get_template_part('templates/parts/contact/map'); ?>
+  </section>
+
 <?php get_footer(); ?>

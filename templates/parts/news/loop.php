@@ -7,7 +7,7 @@ $fields = get_fields();
       <?php 
         $args = array(
           'post_type' => 'noticia',
-          'posts_per_page' => -1,
+          'posts_per_page' => 6,
         );
       
         if ( isset( $_GET['categoria'] ) && $_GET['categoria'] ) {

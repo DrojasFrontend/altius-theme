@@ -86,7 +86,7 @@ textarea {
   border-width: 0;
 }
 
-.site{
+.site {
   margin-top: -6.2rem;
 }
 
@@ -119,5 +119,104 @@ textarea {
   }
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+.custom-map {
+  position: relative;
+  padding: 3rem 0 0;
+  background-color: $color-black;
+
+  .h2 {
+    text-align: center;
+    color: $color-white;
+    margin-bottom: 1rem;
+  }
+
+  .check-ops {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn {
+    &-talk,
+    &-car {
+      display: flex;
+      align-items: center;
+      font: 500 1.7rem/1 "Roboto", sans-serif;
+      width: 13.14rem;
+      text-transform: uppercase;
+      border: 0.0625rem solid $color-white;
+      color: $color-white;
+      background-color: transparent;
+      cursor: pointer;
+
+      &.active {
+        color: $color-red;
+        background-color: $color-white;
+
+        svg {
+          path.b {
+            fill: $color-red;
+          }
+
+          path.b2 {
+            fill: $color-red;
+          }
+        }
+      }
+    }
+  }
+
+  &__select {
+    padding: 2rem 0;
+    background-color: $color-red;
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 65rem;
+      column-gap: 2rem;
+
+      div {
+        &:last-child {
+          background: url(/wp-content/themes/altius-theme/assets/images/icons/icon-chevron-down.png);
+          background-repeat: no-repeat;
+          background-position: right center;
+        }
+      }
+    }
+
+    input,
+    select {
+      width: 100%;
+      font: 300 2rem/1 "Roboto", sans-serif;
+      color: $color-white;
+      border-bottom: 0.0625rem solid $color-white;
+    }
+
+    input {
+      &::-moz-placeholder {
+        color: $color-white;
+        opacity: 1;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $color-white;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: $color-white;
+        opacity: 1;
+      }
+
+      &::placeholder {
+        color: $color-white;
+        opacity: 1;
+      }
+    }
   }
 }
