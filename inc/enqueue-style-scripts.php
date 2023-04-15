@@ -37,7 +37,7 @@
       }
     }  else if (is_single()) {
       wp_enqueue_style('singleCss',  CSS_BASE . 'single.css', array(), _S_VERSION);
-    } 
+    }
 
     // Scripts
     wp_enqueue_script('jqueryJs', JS_BASE . 'libs/jquery.min.js', array(), '3.6.4', true);

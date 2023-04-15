@@ -7,7 +7,9 @@ $fields = get_fields();
       <?php 
         $args = array(
           'post_type' => 'noticia',
-          'posts_per_page' => 6,
+          'posts_per_page' => 7,
+          'paged' => get_query_var('paged') ? get_query_var('paged') : 1, // Agregar esta línea
+
         );
       
         if ( isset( $_GET['categoria'] ) && $_GET['categoria'] ) {
@@ -31,8 +33,9 @@ $fields = get_fields();
                   <div class="news__loop-card-main">
                     <header>
                       <p class="text news__loop-card__date black">
-                        <span class="small"><?= get_the_date('M'); ?></span>
-                        <span><?= get_the_date('d'); ?></span>
+                        <span class="month"><?= get_the_date('M'); ?></span>
+                        <span class="day"><?= get_the_date('d'); ?></span>
+                        <span class="year"><?= get_the_date('Y'); ?></span>
                       </p>
                       <h2><?= the_title(); ?></h2>
                     </header>
@@ -52,8 +55,9 @@ $fields = get_fields();
                   <?php if (has_post_thumbnail()): ?>
                     <div class="news__loop-card__image">
                       <p class="news__loop-card__date">
-                        <span class="small"><?= get_the_date('M'); ?></span>
-                        <span><?= get_the_date('d'); ?></span>
+                        <span class="month"><?= get_the_date('M'); ?></span>
+                        <span class="day"><?= get_the_date('d'); ?></span>
+                        <span class="year"><?= get_the_date('Y'); ?></span>
                       </p>
                       <?= the_post_thumbnail(); ?>
                       <div class="news__loop-card__cat">
@@ -70,9 +74,12 @@ $fields = get_fields();
                   <?php endif; ?>
                   <footer>
                     <h2><?= the_title(); ?></h2>
-                    <p>
-                      <?= substr(get_the_excerpt(), 0, 155) . '...'; ?>
-                    </p>
+                    <?php
+                    if(get_the_excerpt()) { ?>
+                      <p>
+                        <?= substr(get_the_excerpt(), 0, 155) . '...'; ?>
+                      </p>
+                    <?php } ?>
                     <a href="<?php the_permalink(); ?>" class="news__loop-card__link text">Continuá leyendo</a>
                   </footer>
                 </div>

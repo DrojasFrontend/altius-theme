@@ -188,7 +188,7 @@
       &__date {
         font: 600 1.9rem/0.8 Roboto, sans-serif;
         width: 4.2rem;
-        padding: 2rem 0 0.7rem;
+        padding: 1rem 0 0.7rem;
         color: $color-white;
         text-transform: uppercase;
         background-color: $color-red;
@@ -198,8 +198,19 @@
           background-color: $color-black;
         }
 
-        .small {
-          font: 600 1rem/1 "Roboto", sans-serif;
+        .month {
+          font: 600 1rem/1.1 "Roboto", sans-serif;
+        }
+
+        .day {
+          display: block;
+          font: 600 2rem/0.8 "Roboto", sans-serif;
+          margin-bottom: .2rem;
+        }
+
+        .year {
+          display: block;
+          font: 600 .9rem/1 "Roboto", sans-serif;
         }
       }
 

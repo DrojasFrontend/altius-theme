@@ -91,7 +91,7 @@ $fields = get_fields();
                 while ( $noticias_query->have_posts() ) {
                   $noticias_query->the_post();
                   $title = get_the_title();
-                  $title_str = substr( $title, 0, 30 ) . '...';
+                  $title_str = substr( $title, 0, 40 ) . '...';
                   $date = get_the_date('D - d - M');
                   $excerpt = substr(get_the_excerpt(), 0, 135) . '...';
                   $permalink = get_permalink();
