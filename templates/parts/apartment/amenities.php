@@ -2,7 +2,6 @@
 <?php 
   $fields = get_fields();
   $amenities = $fields['apartment_amenities'];
-
 ?>
 <div class="apartment__amenities-bckg" style="background-color: <?= $fields['apartment_amenities_bckg']; ?>">
   <div class="apartment__amenities-wrapper">

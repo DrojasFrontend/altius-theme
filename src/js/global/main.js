@@ -16,6 +16,10 @@ jQuery(function ($) {
     jCounter.load("#counter");
   }
 
+  if (jPlayVideo) {
+    jPlayVideo.load(".swiper-top");
+  }
+
   const $swiperClass = $('.swiper')
 
   if(jSwiper && $swiperClass.length) {

@@ -22,6 +22,14 @@ get_header();
         <?php get_template_part('templates/parts/apartment/amenities'); ?>
       </section>
 
+      <section class="apartment__gallery">
+        <?php get_template_part('templates/parts/apartment/gallery'); ?>
+      </section>
+
+      <section class="apartment__brochure">
+        <?php get_template_part('templates/parts/apartment/brochure'); ?>
+      </section>
+
     <?php endwhile;
   ?>
 </div>

@@ -45,4 +45,30 @@ var jSwiper = (function($) {
   
   });
 
+  const swiperBottom = new Swiper(".swiper-bottom", {
+    loop: true,
+    spaceBetween: 0,
+    slidesPerView: 5,
+    freeMode: true,
+  });
+
+  const swiperTop = new Swiper(".swiper-top", {
+    loop: true,
+    spaceBetween: 0,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiperBottom,
+    },
+  });
+
+  swiperTop.on('slideChange', function () {
+    if (myVideo.paused === false && $(".swiper-slide-active").find("#myVideo").length === 0) {
+      myVideo.pause();
+      $(".play-video-gallery").fadeIn();
+    }
+  });
+
 })(jQuery)
