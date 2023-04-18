@@ -20,6 +20,10 @@ jQuery(function ($) {
     jPlayVideo.load(".swiper-top");
   }
 
+  if (jFooter) {
+    jFooter.load(".footer");
+  }
+
   const $swiperClass = $('.swiper')
 
   if(jSwiper && $swiperClass.length) {

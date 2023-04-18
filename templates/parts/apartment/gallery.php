@@ -12,7 +12,7 @@
               <source src="<?php echo esc_url($item['url']); ?>" type="<?php echo esc_attr($item['mime_type']); ?>">
             </video>
             <button class="play play-video-gallery" type="button" aria-label="play">
-              <img class="" src="<?= IMG_BASE; ?>icons/icon-play-big.svg" alt="prev" width="" height="" loading="lazy">
+              <img class="play" class="" src="<?= IMG_BASE; ?>icons/icon-play-new.png" alt="prev" width="" height="" loading="lazy">
             </button>
           <?php endif; ?>
         </li>
@@ -35,7 +35,7 @@
                   <img src="<?php echo esc_url($item['sizes']['medium']); ?>" alt="<?php echo esc_attr($item['alt']); ?>" />
                 <?php elseif ($item['type'] == 'video') : ?>
                   <div class="video">
-                    <img class="play" class="" src="<?= IMG_BASE; ?>icons/icon-play-big.svg" alt="prev" width="" height="" loading="lazy">
+                    <img class="play" class="" src="<?= IMG_BASE; ?>icons/icon-play-new.png" alt="prev" width="" height="" loading="lazy">
                   </div>
                 <?php endif; ?>
               </li>

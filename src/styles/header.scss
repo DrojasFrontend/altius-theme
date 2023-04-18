@@ -98,6 +98,10 @@
     text-decoration: none;
     color: $color-white;
     transition: all 0.2s ease-in;
+
+    &.level-3 {
+      font-size: 0.8rem;
+    }
   }
 
   .navbar__arrow {
@@ -233,7 +237,7 @@
     &__item {
       &-link {
         position: relative;
-        padding: 0.3rem 2rem;
+        padding: 0.3rem 1rem;
 
         &:hover {
           .level-1 {
@@ -266,7 +270,7 @@
       &__item {
         &-link {
           position: relative;
-          padding: 0.3rem 2rem;
+          padding: 0.3rem 1rem;
 
           .thumbnail-menu {
             width: 8rem;
@@ -310,7 +314,7 @@
         &__item {
           &-link {
             position: relative;
-            padding: 0.3rem 2rem;
+            padding: 0.3rem 1rem;
 
             &:hover {
               .level-3 {

@@ -70,7 +70,7 @@
         "custom-fields"
     ],
     "taxonomies": "",
-    "has_archive": false,
+    "has_archive": true,
     "has_archive_slug": "",
     "rewrite": {
         "permalink_rewrite": "post_type_key",
@@ -83,5 +83,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1681512357
+    "modified": 1681615636
 }

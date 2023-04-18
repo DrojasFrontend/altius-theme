@@ -116,7 +116,7 @@ function setMarkers(is_mobile, is_project, init) {
         ]);
         let img = "";
           infoWindowContent.push([
-            '<div style="" class="info_content">' +
+            '<div class="info_content">' +
               '<p style="margin:0">' +
               coords.subname +
               "</p>" +
@@ -167,6 +167,7 @@ function traceRoute(directionsService, directionsDisplay) {
         directionsDisplay.setDirections(response);
         setTimeout(function () {
           $(".indications-box").removeClass("d-none");
+          $(".close-indications").removeClass("d-none d-show");
         }, 500);
         $(".indications-box").removeClass("fade-in");
       } else {
@@ -235,6 +236,11 @@ $(document).ready(function () {
       alert("Geolocation is not supported by this browser.");
     }
   });
+
+  $("#close-indications").click(function (e) {
+    $(this).toggleClass("d-show");
+    $(".indications-box").toggleClass("d-none");
+  })
 });
 
 function detectBrowser() {
@@ -339,7 +345,7 @@ function geoSuccess(position) {
         position: position,
         map: map,
         icon: {
-          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+          url: "http://altius.local/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[i][0],
@@ -351,7 +357,7 @@ function geoSuccess(position) {
         position: position,
         map: map,
         icon: {
-          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+          url: "http://altius.local/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[i][0],
@@ -483,7 +489,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -500,7 +506,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -512,43 +518,12 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
           });
         }
-
-        google.maps.event.addListener(
-          marker,
-          "click",
-          (function (marker, i) {
-            return function () {
-              $("#google-map").attr(
-                "href",
-                "https://maps.apple.com/?q=" +
-                  markers[i][1] +
-                  "," +
-                  markers[i][2]
-              );
-              $("#waze-map").attr(
-                "href",
-                "https://www.waze.com/livemap?ll=" +
-                  markers[i][1] +
-                  "%2C" +
-                  markers[i][2] +
-                  "&navigate=yes&zoom=17"
-              );
-              infoWindow.setContent(infoWindowContent[i][0]);
-              map.setCenter(marker.getPosition());
-              // map.panTo(marker.getPosition());
-              infoWindow.open(map, marker);
-              latit = marker.getPosition().lat();
-              longit = marker.getPosition().lng();
-              $("#error-label").removeClass("d-flex");
-            };
-          })(marker, i)
-        );
 
         if (markers.length == 1) {
           latit = marker.getPosition().lat();
@@ -568,7 +543,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
         position: position,
         map: map,
         icon: {
-          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+          url: "http://altius.local/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[0][0],
@@ -705,7 +680,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -722,7 +697,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -735,7 +710,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+              url: "http://altius.local/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -780,7 +755,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
         position: position,
         map: map,
         icon: {
-          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
+          url: "http://altius.local/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[0][0],
@@ -923,11 +898,13 @@ var document_width = $(document).width(),
       </div>
     </div>
     <div id="map" style="height: 600px; width: 100%;"></div>
-    <!-- <div class="indications-box">
+    <button id="close-indications" class="close-indications d-none">
+      <img class="" src="<?= IMG_BASE; ?>icon-next-ligh.png" alt="" width="" height="" loading="lazy">
+    </button>
+    <div class="indications-box d-none">
       <div id="indications-panel"></div>
       <div class="btn-box">
-      <button id="close-indications">Cerrar Panel</button>
       </div>
-    </div> -->
+    </div>
   </div>
 </div>

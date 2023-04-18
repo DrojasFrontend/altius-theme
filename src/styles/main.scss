@@ -197,6 +197,12 @@ textarea {
       border-bottom: 0.0625rem solid $color-white;
     }
 
+    select {
+      option {
+        color: $color-black;
+      }
+    }
+
     input {
       &::-moz-placeholder {
         color: $color-white;
@@ -218,5 +224,66 @@ textarea {
         opacity: 1;
       }
     }
+  }
+}
+
+.results {
+  padding-top: 20rem;
+}
+
+.gm-style-iw.gm-style-iw-c {
+  display: block;
+  border-radius: 0;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1.8rem;
+    left: -0.374rem;
+    width: 1rem;
+    height: 4rem;
+    background-color: $color-red;
+    transform: rotate(40deg);/*  */
+  }
+}
+
+.indications-box {
+  position: absolute;
+  top: 25rem;
+  z-index: 1;
+  width: 25rem;
+  background: $color-white;
+  font-size: .8rem;
+  height: 30rem;
+  overflow: scroll;
+  transition: all .3s ease;
+
+  &.d-none {
+    transform: translateX(-100%);
+  }
+}
+
+#close-indications {
+  position: absolute;
+  top: 38rem;
+  left: 25rem;
+  background: $color-red;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  img {
+    transition: all .3s ease;
+  }
+
+  &.d-none {
+    left: -3rem;
+  }
+
+  &.d-show {
+    left: 0;
   }
 }

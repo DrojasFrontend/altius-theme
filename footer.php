@@ -33,7 +33,8 @@
 
 		<?php }
 	?>
-	<footer class="footer" style="background-image: url(<?= $option_fields['footer_bckg']['url'] ?>">
+	<footer class="footer">
+		<img class="footer__bckg" class="" src="<?= $option_fields['footer_bckg']['url'] ?>" alt="" width="" height="" loading="lazy">
 		<div class="container">
 			<div class="footer__wrapper">
 				<div class="footer__bottom">

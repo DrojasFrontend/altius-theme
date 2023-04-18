@@ -5,6 +5,25 @@
   padding: 5rem 0 1rem;
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
+
+  &__bckg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: scale(1);
+    transition: all .8s ease;
+
+    &.is-show {
+      transform: scale(1.1);
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
 
   .h3 {
     color: $color-red;
@@ -22,6 +41,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   &__bottom {
@@ -39,14 +59,34 @@
       column-gap: 1rem;
     }
 
+    &-left,
+    &-center,
+    &-right {
+      transition: all 0.8s ease;
+      opacity: 0;
+    }
+
     &-left {
+      transform: translateX(-200%);
+
+      &.is-show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
       .menu__item {
         padding: 0.1rem 0;
       }
     }
 
     &-center {
+      transform: translateY(-20px);
       text-align: center;
+
+      &.is-show {
+        transform: translateY(0);
+        opacity: 1;
+      }
 
       br {
         display: none;
@@ -95,8 +135,14 @@
     }
 
     &-right {
+      transform: translateX(200%);
       text-align: right;
       color: $color-white;
+
+      &.is-show {
+        transform: translateX(0);
+        opacity: 1;
+      }
 
       a {
         display: flex;

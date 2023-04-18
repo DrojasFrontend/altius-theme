@@ -34,6 +34,8 @@
         wp_enqueue_style('contactCss',  CSS_BASE . 'contact.css', array(), _S_VERSION);
       } else if ($post->post_name == 'noticias') {
         wp_enqueue_style('newsCss',  CSS_BASE . 'news.css', array(), _S_VERSION);
+      } else if ($post->post_name == 'resultado-apartamentos') {
+        wp_enqueue_style('apartmentCss',  CSS_BASE . 'apartment.css', array(), _S_VERSION);
       }
     }  else if (is_single()) {
       wp_enqueue_style('singleCss',  CSS_BASE . 'single.css', array(), _S_VERSION);

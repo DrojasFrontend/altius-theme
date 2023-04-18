@@ -10,12 +10,12 @@ $fields = get_fields();
         <p><?= $fields['home_hero_cta'] ?></p>
         <?php get_template_part('templates/parts/icons/line-animate'); ?>
       </div>
-      <!-- <div class="filter">
+      <div class="filter">
         <div class="filter__position">
           <?php echo do_shortcode('[searchandfilter id="591"]'); ?>
         </div>
-      </div> -->
-      <div class="filter">
+      </div>
+      <!-- <div class="filter">
         <div class="filter__position">
           <ul>
             <li class="menu">
@@ -135,7 +135,7 @@ $fields = get_fields();
 
           <button class="view">VER RESULTADOS</button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="swiper-wrapper">

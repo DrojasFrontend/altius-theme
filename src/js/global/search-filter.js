@@ -1,6 +1,6 @@
 var jSearchFilter = (function ($) {
-  var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"');
-  var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"');
+  var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"]');
+  var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"]');
 
   var btnSelected = $(".sf-field-taxonomy-tipo .selected");
 
@@ -9,23 +9,119 @@ var jSearchFilter = (function ($) {
 
   var checkedInput = $('.sf-field-taxonomy-tipo input[type="radio"]:checked');
   var text = checkedInput.next("label").text();
-  $("<span class='selected'>")
-    .text(text)
-    .insertAfter("li.sf-field-taxonomy-tipo h4");
 
-    $('.sf-field-taxonomy-tipo input[type="radio"]').click(function (e) {
-      e.stopPropagation();
-      var text = $(this).next("label").text();
-      if ($(this).is(":checked")) {
-        $("li.sf-field-taxonomy-tipo span").remove();
-        $("<span class='selected'>")
+  var activeSpan = $("li.sf-field-taxonomy-tipo span.active");
+
+  if (activeSpan.length) {
+    activeSpan.text(text);
+  } else {
+    $("<span class='selected active'>")
+      .text(text)
+      .insertAfter("li.sf-field-taxonomy-tipo h4");
+  }
+
+  $('.sf-field-taxonomy-tipo input[type="radio"]').click(function (e) {
+    e.stopPropagation();
+    var text = $(this).next("label").text();
+    var activeSpan = $("li.sf-field-taxonomy-tipo span.active");
+
+    if ($(this).is(":checked")) {
+      if (activeSpan.length) {
+        activeSpan.text(text);
+      } else {
+        $("<span class='selected active'>")
           .text(text)
           .insertAfter("li.sf-field-taxonomy-tipo h4");
       }
+    }
+  });
+
+  // Checkbox
+  function handleCheckboxGroup($checkboxGroup, $activeSpan) {
+    $checkboxGroup.on("click", 'input[type="checkbox"]', function (e) {
+      e.stopPropagation();
+      const labels = $checkboxGroup
+        .find('input[type="checkbox"]:checked')
+        .map(function () {
+          return $(this).next("label").text();
+        })
+        .get();
+
+      if (labels.length > 0) {
+        $activeSpan.text(labels.join(", "));
+      } else {
+        $activeSpan.text("Selecciona");
+      }
     });
-    
-    $(".sf-field-taxonomy-tipo .selected").on("click", function () {
-      $(this).next('ul').slideToggle();
+
+    $checkboxGroup.on("click", "label", function (e) {
+      e.preventDefault();
+      const checkbox = $(this).prev('input[type="checkbox"]');
+      checkbox.prop("checked", !checkbox.prop("checked")).trigger("click");
     });
-    
+  }
+
+  const $ciudadGroup = $(".sf-field-taxonomy-ciudad");
+  const $activeCiudadSpan = $("<span class='selected'>").insertAfter(
+    $ciudadGroup.find("h4")
+  );
+  $activeCiudadSpan.text("Selecciona");
+
+  const $barrioGroup = $(".sf-field-taxonomy-barrio");
+  const $activeBarrioSpan = $("<span class='selected'>").insertAfter(
+    $barrioGroup.find("h4")
+  );
+  $activeBarrioSpan.text("Selecciona");
+
+  const $condicionGroup = $(".sf-field-taxonomy-condicion");
+  const $activeCondicionSpan = $("<span class='selected'>").insertAfter(
+    $condicionGroup.find("h4")
+  );
+  $activeCondicionSpan.text("Selecciona");
+
+  const $proyectoGroup = $(".sf-field-taxonomy-proyecto");
+  const $activeProyectoSpan = $("<span class='selected'>").insertAfter(
+    $proyectoGroup.find("h4")
+  );
+  $activeProyectoSpan.text("Selecciona");
+
+  const $ulCiudadGroup = $ciudadGroup.find("ul");
+  const $ulBarrioGroup = $barrioGroup.find("ul");
+  const $ulCondicionGroup = $condicionGroup.find("ul");
+  const $ulProyectoGroup = $proyectoGroup.find("ul");
+
+  const $sfClean = $("<button type='button' class='clean'>").text("× VACIAR");
+  const $sfAccept = $("<button type='button' class='accept'>").text("ACEPTAR");
+
+  handleCheckboxGroup($ciudadGroup, $activeCiudadSpan);
+  handleCheckboxGroup($barrioGroup, $activeBarrioSpan);
+  handleCheckboxGroup($condicionGroup, $activeCondicionSpan);
+  handleCheckboxGroup($proyectoGroup, $activeProyectoSpan);
+
+  const $ulArray = [
+    $ulCiudadGroup,
+    $ulBarrioGroup,
+    $ulCondicionGroup,
+    $ulProyectoGroup,
+  ];
+
+  $ulArray.forEach(($ul) => {
+    const $sfCleanClone = $sfClean.clone().text("× VACIAR");
+    $ul.append($sfCleanClone);
+    const $sfAcceptClone = $sfAccept.clone();
+    $ul.append($sfAcceptClone);
+    const $activeSpan = $ul.siblings("span.selected"); // Nueva asignación
+    const toggleUl = function () {
+      $ul.slideToggle();
+    };
+    $sfAcceptClone.on("click", toggleUl);
+    $sfCleanClone.on("click", function () {
+      $ul.find("input[type=checkbox]").prop("checked", false);
+      $activeSpan.text("Selecciona"); // Actualiza el texto del span activo
+    });
+  });
+
+  $(".selected").on("click", function () {
+    $(this).siblings("ul").slideToggle();
+  });
 })(jQuery);

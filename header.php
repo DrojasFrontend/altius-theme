@@ -12,13 +12,15 @@
  */
 
 ?>
-<!doctype html>
-<html <?php language_attributes(); ?> >
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' - '; } ?><?php bloginfo('name'); ?></title>
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+  <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="<?php echo get_the_excerpt(); ?>" />
 
 	<?php wp_head(); ?>
