@@ -1,11 +1,6 @@
-var jSearchFilter = (function ($) {
-  var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"]');
-  var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"]');
+var jSearchFilter = (function ($) {  
 
   var btnSelected = $(".sf-field-taxonomy-tipo .selected");
-
-  radioBtnType1.removeAttr("checked");
-  radioBtnType2.prop("checked", true);
 
   var checkedInput = $('.sf-field-taxonomy-tipo input[type="radio"]:checked');
   var text = checkedInput.next("label").text();
@@ -79,6 +74,12 @@ var jSearchFilter = (function ($) {
   );
   $activeCondicionSpan.text("Selecciona");
 
+  const $dormitorioGroup = $(".sf-field-taxonomy-dormitorio");
+  const $activeDormitorioSpan = $("<span class='selected'>").insertAfter(
+    $dormitorioGroup.find("h4")
+  );
+  $activeDormitorioSpan.text("Selecciona");
+
   const $proyectoGroup = $(".sf-field-taxonomy-proyecto");
   const $activeProyectoSpan = $("<span class='selected'>").insertAfter(
     $proyectoGroup.find("h4")
@@ -88,6 +89,7 @@ var jSearchFilter = (function ($) {
   const $ulCiudadGroup = $ciudadGroup.find("ul");
   const $ulBarrioGroup = $barrioGroup.find("ul");
   const $ulCondicionGroup = $condicionGroup.find("ul");
+  const $ulDormitorioGroup = $dormitorioGroup.find("ul");
   const $ulProyectoGroup = $proyectoGroup.find("ul");
 
   const $sfClean = $("<button type='button' class='clean'>").text("× VACIAR");
@@ -97,12 +99,14 @@ var jSearchFilter = (function ($) {
   handleCheckboxGroup($barrioGroup, $activeBarrioSpan);
   handleCheckboxGroup($condicionGroup, $activeCondicionSpan);
   handleCheckboxGroup($proyectoGroup, $activeProyectoSpan);
+  handleCheckboxGroup($dormitorioGroup, $activeDormitorioSpan);
 
   const $ulArray = [
     $ulCiudadGroup,
     $ulBarrioGroup,
     $ulCondicionGroup,
     $ulProyectoGroup,
+    $ulDormitorioGroup
   ];
 
   $ulArray.forEach(($ul) => {
@@ -110,14 +114,14 @@ var jSearchFilter = (function ($) {
     $ul.append($sfCleanClone);
     const $sfAcceptClone = $sfAccept.clone();
     $ul.append($sfAcceptClone);
-    const $activeSpan = $ul.siblings("span.selected"); // Nueva asignación
+    const $activeSpan = $ul.siblings("span.selected"); 
     const toggleUl = function () {
       $ul.slideToggle();
     };
     $sfAcceptClone.on("click", toggleUl);
     $sfCleanClone.on("click", function () {
       $ul.find("input[type=checkbox]").prop("checked", false);
-      $activeSpan.text("Selecciona"); // Actualiza el texto del span activo
+      $activeSpan.text("Selecciona");
     });
   });
 

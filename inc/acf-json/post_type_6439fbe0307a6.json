@@ -63,6 +63,7 @@
     "plural_capability_name": "posts",
     "supports": [
         "title",
+        "page-attributes",
         "thumbnail"
     ],
     "taxonomies": "",
@@ -79,5 +80,5 @@
     "can_export": true,
     "delete_with_user": false,
     "register_meta_box_cb": "",
-    "modified": 1681521725
+    "modified": 1681858084
 }

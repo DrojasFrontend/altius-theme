@@ -64,11 +64,14 @@ var jSwiper = (function($) {
     },
   });
 
-  swiperTop.on('slideChange', function () {
-    if (myVideo.paused === false && $(".swiper-slide-active").find("#myVideo").length === 0) {
-      myVideo.pause();
-      $(".play-video-gallery").fadeIn();
-    }
-  });
+  if (typeof myVideo !== 'undefined' && myVideo !== null) {
+    swiperTop.on('slideChange', function () {
+      if (myVideo.paused === false && $(".swiper-slide-active").find("#myVideo").length === 0) {
+        myVideo.pause();
+        $(".play-video-gallery").fadeIn();
+      }
+    });
+  }
+  
 
 })(jQuery)

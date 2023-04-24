@@ -806,7 +806,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
     function (event) {
       if (this.getZoom()) {
         // or set a minimum
-        this.setZoom(16); // set zoom here
+        this.setZoom(10); // set zoom here
       }
     }
   );
@@ -823,8 +823,8 @@ projects = [
       subname: "<strong>Punta del Este:</strong>",
       name: "Showroom Atlantico",
       direccion: "Av Roosevelt - Parada 22",
-      lat: "-34.90691345838767",
-      lng: "-56.14385410804081",
+      lat: "-34.94215654633676",
+      lng: "-54.93111220389826",
       medias: [],
     },
   },
@@ -889,7 +889,7 @@ var document_width = $(document).width(),
                 <select style="cursor: pointer;" name="Tipos" class="" id="select-showrooms">
                   <option selected value="todos">Todos</option>
                   <option value="Altius Life">Altius Life</option>
-                  <option value="Showroom Atlantico">Showroom Atlantico</option>
+                  <option value="Showroom Atlantico">Showroom Atlántico</option>
                 </select>
               </div>
             </div>
