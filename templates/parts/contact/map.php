@@ -897,7 +897,7 @@ var document_width = $(document).width(),
         </form>
       </div>
     </div>
-    <div id="map" style="height: 600px; width: 100%;"></div>
+    <div id="map"></div>
     <button id="close-indications" class="close-indications d-none">
       <img class="" src="<?= IMG_BASE; ?>icon-next-ligh.png" alt="" width="" height="" loading="lazy">
     </button>

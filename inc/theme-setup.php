@@ -85,36 +85,37 @@ if ( ! function_exists( 'altius_theme_setup' ) ) {
 		// add_filter ('wpcf7_load_js', '__return_false'); 
 		add_filter ('wpcf7_load_css', '__return_false');
 
+		// contact form remove tag <p></p>
+		add_filter('wpcf7_autop_or_not', '__return_false');
+
+		// show price properties, when form is OK
+		add_action( 'wp_footer', 'add_class_after_send' );
+		function add_class_after_send() { ?>
+			<script type="text/javascript">
+				document.addEventListener( 'wpcf7mailsent', function( event ) {
+					if ( '1381' == event.detail.contactFormId ) { 
+						jQuery( '#display-price ').fadeIn(); 
+					}
+				}, false );
+			</script>
+		<?php }
+
+		// Enable first filter Home
+		add_action( 'wp_footer', 'enable_first_filter' );
+		function enable_first_filter() { 
+			if(is_front_page() || is_home()) : ?>
+			<script type="text/javascript">
+				var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"]');
+				var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"]');
+				radioBtnType1.removeAttr("checked");
+				radioBtnType2.prop("checked", true);
+			</script>
+		<?php endif; }
 	}
 }
 add_action( 'after_setup_theme', 'altius_theme_setup' );
 
-// contact form remove tag <p></p>
-add_filter('wpcf7_autop_or_not', '__return_false');
 
-// show price properties, when form is OK
-add_action( 'wp_footer', 'add_class_after_send' );
-function add_class_after_send() { ?>
-	<script type="text/javascript">
-		document.addEventListener( 'wpcf7mailsent', function( event ) {
-			if ( '1381' == event.detail.contactFormId ) { 
-				jQuery( '#display-price ').fadeIn(); 
-			}
-		}, false );
-	</script>
-<?php }
-
-// Enable first filter Home
-add_action( 'wp_footer', 'enable_first_filter' );
-function enable_first_filter() { 
-	if(is_front_page() || is_home()) : ?>
-	<script type="text/javascript">
-		var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"]');
-		var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"]');
-		radioBtnType1.removeAttr("checked");
-		radioBtnType2.prop("checked", true);
-	</script>
-<?php endif; } ?>
 
 
 

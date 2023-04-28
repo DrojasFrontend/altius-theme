@@ -127,24 +127,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_642c76f52dcdd",
-            "label": "Fondo",
-            "name": "home_featured_bckg",
-            "aria-label": "",
-            "type": "color_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "#292929",
-            "enable_opacity": 0,
-            "return_format": "string"
-        },
-        {
             "key": "field_642c69792a847",
             "label": "Destacados",
             "name": "repeater_featured",
@@ -559,5 +541,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680885239
+    "modified": 1682438388
 }

@@ -1,18 +1,24 @@
 @import "./colors";
 @import "./typograpy";
+@import "./mixin";
 
 .news {
   &__banner {
     position: relative;
     &-bckg {
       width: 100%;
-      height: 40rem;
-      padding: 0 0 8rem;
+      height: 30rem;
+      padding: 0 0 3rem;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       overflow: hidden;
+
+      @include breakpoint(large-desktop) {
+        height: 40rem;
+        padding: 0 0 8rem;
+      }
     }
 
     .container {
@@ -58,9 +64,13 @@
 
   &__search {
     &-form {
-      width: 43rem;
       margin: 0 auto;
-      padding: 6rem 1rem;
+      padding: 2rem 0;
+
+      @include breakpoint(large-desktop) {
+        width: 43rem;
+        padding: 6rem 1rem;
+      }
 
       form {
         display: grid;
@@ -75,15 +85,6 @@
 
     &-bckg {
       position: relative;
-
-      &:before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 1.875rem;
-        position: absolute;
-        top: -1.875rem;
-      }
     }
 
     &-submit {
@@ -109,12 +110,15 @@
   &__loop {
     &-card {
       &s {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 8rem;
-        max-width: 76rem;
         margin: 0 auto;
         padding: 0 1rem 8rem;
+
+        @include breakpoint(large-desktop) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          max-width: 76rem;
+          column-gap: 8rem;
+        }
 
         .pagination {
           display: flex;
@@ -142,21 +146,32 @@
 
       &-bckg {
         grid-column: 1 / span 2;
-        margin-bottom: 8rem;
+        margin-bottom: 3rem;
 
-        &:before {
-          content: "";
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 44rem;
-          background-color: $color-red;
+        @include breakpoint(large-desktop) {
+          margin-bottom: 8rem;
+        }
+
+        @include breakpoint(large-desktop) {
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 44rem;
+            background-color: $color-red;
+          }
         }
       }
 
       &-main {
         position: relative;
+        padding-top: 2rem;
+
+        @include breakpoint(large-desktop) {
+          padding: 0;
+        }
 
         header {
           display: flex;
@@ -166,9 +181,14 @@
           color: $color-white;
 
           h2 {
-            font: 600 2rem/1 "Roboto", sans-serif;
+            font: 600 1rem/1 "Roboto", sans-serif;
             max-width: 35rem;
-            padding: 0.5rem 0 0.4rem;
+            padding: 0.5rem 1rem 0.4rem;
+
+            @include breakpoint(large-desktop) {
+              font: 600 2rem/1 "Roboto", sans-serif;
+              padding: 0.5rem 0 0.4rem;
+            }
           }
         }
 
@@ -188,36 +208,51 @@
       &__date {
         font: 600 1.9rem/0.8 Roboto, sans-serif;
         width: 4.2rem;
-        padding: 1rem 0 0.7rem;
+        padding: 1rem 0.3rem 0.7rem;
         color: $color-white;
         text-transform: uppercase;
         background-color: $color-red;
         text-align: center;
+
+        @include breakpoint(large-desktop) {
+          padding: 1rem 0 0.7rem;
+        }
 
         &.black {
           background-color: $color-black;
         }
 
         .month {
-          font: 600 1rem/1.1 "Roboto", sans-serif;
+          font: 600 0.8rem/1.1 "Roboto", sans-serif;
+          @include breakpoint(large-desktop) {
+            font: 600 1rem/1.1 "Roboto", sans-serif;
+          }
         }
 
         .day {
           display: block;
-          font: 600 2rem/0.8 "Roboto", sans-serif;
-          margin-bottom: .2rem;
+          font: 600 1rem/0.8 "Roboto", sans-serif;
+          margin-bottom: 0.2rem;
+
+          @include breakpoint(large-desktop) {
+            font: 600 2rem/0.8 "Roboto", sans-serif;
+          }
         }
 
         .year {
           display: block;
-          font: 600 .9rem/1 "Roboto", sans-serif;
+          font: 600 0.8rem/1 "Roboto", sans-serif;
+
+          @include breakpoint(large-desktop) {
+            font: 600 0.9rem/1 "Roboto", sans-serif;
+          }
         }
       }
 
       &__image {
         position: relative;
         overflow: hidden;
-        
+
         img {
           width: 100%;
           height: 28rem;
@@ -240,15 +275,20 @@
       }
 
       &__excerpt {
-        font: 300 1.7rem/1 "Roboto", sans-serif;
+        font: 300 1rem/1 "Roboto", sans-serif;
         padding: 1rem;
         background-color: $color-white;
+
+        @include breakpoint(large-desktop) {
+          font: 300 1.7rem/1 "Roboto", sans-serif;
+        }
       }
 
       &__link {
         position: absolute;
         left: 50%;
         bottom: 2rem;
+        width: calc(100% - 40%);
         padding: 0.4rem 1rem 0.3rem;
         color: $color-white;
         border: 0.0625rem solid $color-white;
@@ -256,6 +296,11 @@
         transform: translate(-50%, 0%);
         transition: background 0.2s ease-in-out;
         z-index: 1;
+        text-align: center;
+
+        @include breakpoint(large-desktop) {
+          width: auto;
+        }
 
         &:hover {
           border: 0.0625rem solid $color-red;
@@ -288,13 +333,17 @@
         }
 
         &__cat {
-          font: 500 1.3rem/1 "Roboto", sans-serif;
+          font: 500 0.9rem/1 "Roboto", sans-serif;
           position: absolute;
           bottom: 0;
           right: 0;
           padding: 0.5rem 3rem;
           color: $color-white;
           background-color: $color-red;
+
+          @include breakpoint(large-desktop) {
+            font: 500 1.3rem/1 "Roboto", sans-serif;
+          }
         }
 
         &__link {
@@ -318,16 +367,24 @@
 
       footer {
         h2 {
-          font: 600 1.7rem/1 "Roboto", sans-serif;
+          font: 600 1rem/1 "Roboto", sans-serif;
           color: $color-white;
           margin-bottom: 0.7rem;
+
+          @include breakpoint(large-desktop) {
+            font: 600 1.7rem/1 "Roboto", sans-serif;
+          }
         }
 
         p {
-          font: 300 1.5rem/1 "Roboto", sans-serif;
+          font: 300 0.9rem/1 "Roboto", sans-serif;
           color: $color-white;
           margin-bottom: 1.5rem;
           text-align: justify;
+
+          @include breakpoint(large-desktop) {
+            font: 300 1.5rem/1 "Roboto", sans-serif;
+          }
         }
       }
     }

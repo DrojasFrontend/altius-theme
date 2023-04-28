@@ -1,4 +1,5 @@
 @import "./colors";
+@import "./mixin";
 
 .header {
   position: fixed;
@@ -161,10 +162,32 @@
   }
 
   .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    @include breakpoint(large-desktop) {
+      display: block;
+      position: relative;
+      top: initial;
+      left: initial;
+      width: auto;
+      height: auto;
+    }
+
     &__wrapper {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       column-gap: 1rem;
+      height: 100%;
+
+      @include breakpoint(large-desktop) {
+        flex-direction: row;
+        height: auto;
+      }
     }
 
     &__item {
@@ -223,16 +246,22 @@
 
   // level 1
   .submenu {
-    position: absolute;
-    top: 1.25rem;
-    right: 0;
-    width: max-content;
+    position: relative;
+    width: 100%;
     padding: 1rem 0;
-    opacity: 0;
-    visibility: hidden;
     transition: all 0.2s ease-in-out;
-    transform: translateY(1rem);
     background-color: $color-black-100;
+
+    @include breakpoint(large-desktop) {
+      position: absolute;
+      top: 1.25rem;
+      right: 0;
+      width: max-content;
+      padding: 1rem 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(1rem);
+    }
 
     &__item {
       &-link {
@@ -255,17 +284,23 @@
 
     // level 2
     &-submenu {
-      position: absolute;
-      top: -99%;
-      left: 100%;
-      width: max-content;
-      margin-top: -0.25rem;
+      position: relative;
+      width: 100%;
       padding: 1rem 0;
-      opacity: 0;
-      visibility: hidden;
       transition: all 0.2s ease-in-out;
-      transform: translateY(1rem);
       background-color: $color-black-100;
+
+      @include breakpoint(large-desktop) {
+        position: absolute;
+        top: -99%;
+        left: 100%;
+        width: max-content;
+        margin-top: -0.25rem;
+        padding: 1rem 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(1rem);
+      }
 
       &__item {
         &-link {

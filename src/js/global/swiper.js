@@ -2,8 +2,18 @@ var jSwiper = (function($) {
 
   const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
-    slidesPerView: 6,
+    slidesPerView: 1,
     spaceBetween: 0,
+
+    breakpoints: {
+      1024: {
+        slidesPerView: 6,
+      },
+
+      680: {
+        slidesPerView: 2,
+      },
+    },
 
     pagination: {
       el: '.swiper-pagination',

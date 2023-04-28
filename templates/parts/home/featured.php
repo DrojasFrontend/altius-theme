@@ -1,14 +1,10 @@
 <?php
 $fields = get_fields();
+$home_featured_bckg = isset($array['home_featured_bckg']) ? $array['home_featured_bckg'] : '';
+
 ?>
 
-<style>
-  .home__featured-bckg:before {
-    background: transparent linear-gradient(180deg, <?= $fields['home_featured_bckg'] ?>00 0%, <?= $fields['home_featured_bckg'] ?> 100%) 0% 0% no-repeat padding-box;
-  }
-</style>
-
-<div class="home__featured-bckg" style="background-color: <?= $fields['home_featured_bckg'] ?>">
+<div class="home__featured-bckg" style="background-color: <?= $home_featured_bckg ?>">
   <div class="container">
     <div class="home__featured-items">
       <?php if (!empty($fields['repeater_featured']) && count($fields['repeater_featured'])) : ?>

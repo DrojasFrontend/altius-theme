@@ -3,10 +3,6 @@
 ?>
 
 <style>
-  .contact__form-bckg:before {
-    background: transparent linear-gradient(180deg, <?= $fields['contact_form_bckg'] ?>00 0%, <?= $fields['contact_form_bckg'] ?> 100%) 0% 0% no-repeat padding-box;
-  }
-
   .contact__form-social a:hover {
     color: <?= $fields['contact_form_hover'] ?> !important;
   }
