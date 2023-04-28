@@ -317,9 +317,13 @@
     &-legal {
       p {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        gap: 1rem;
         text-align: left;
         color: $color-white;
+        
+        @include breakpoint(large-desktop) {
+          grid-template-columns: 1fr 2fr;
+        }
         
         br {
           display: none;

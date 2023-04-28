@@ -21,21 +21,23 @@
       <div class="container">
         <div class="result__apartment-wrapper">
           <div class="result__apartment-loop">
-            <h2 class="h2 title">
-              Propiedades
-            </h2>
-            <p class="text count">
-              <?php 
-                if ( $query->have_posts() ) { 
-                  $count = $query->found_posts;
-                  if ($count > 1) {
-                    echo "$count resultados";
-                  } else {
-                    echo "$count resultado";
+            <div class="desk">
+              <h2 class="h2 title">
+                Propiedades
+              </h2>
+              <p class="text count">
+                <?php 
+                  if ( $query->have_posts() ) { 
+                    $count = $query->found_posts;
+                    if ($count > 1) {
+                      echo "$count resultados";
+                    } else {
+                      echo "$count resultado";
+                    }
                   }
-                }
-              ?>
-            </p>
+                ?>
+              </p>
+            </div>
             <ul class="result__apartment-items">
               <?php $key = 0; ?>
               <?php if ( $query->have_posts() ) { ?>
@@ -124,13 +126,34 @@
                 <h2 class="h3">No se han encontrado resultados</h2>
               <?php } ?>
             </ul>
+            <div class="result__apartment-filter__form mobile">
+              <h3 class="h3">CONTÁCTANOS</h3>
+              <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
+            </div>
           </div>
           <div class="result__apartment-filter">
+            <div class="mobile">
+              <h2 class="h2 title">
+                Propiedades
+              </h2>
+              <p class="text count">
+                <?php 
+                  if ( $query->have_posts() ) { 
+                    $count = $query->found_posts;
+                    if ($count > 1) {
+                      echo "$count resultados";
+                    } else {
+                      echo "$count resultado";
+                    }
+                  }
+                ?>
+              </p>
+            </div>
             <div class="result__apartment-filter__shortcode">
               <h2 class="h3">BUSCÁ</h2>
               <?php echo do_shortcode('[searchandfilter id="591"]'); ?>
             </div>
-            <div class="result__apartment-filter__form">
+            <div class="result__apartment-filter__form desk">
               <h3 class="h3">CONTÁCTANOS</h3>
               <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
             </div>

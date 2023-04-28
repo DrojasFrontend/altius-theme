@@ -26,8 +26,11 @@
   }
 
   &.default {
-    transform: translateY(-52px);
     background-color: $color-red;
+
+    @include breakpoint(large-desktop) {
+      transform: translateY(-52px);
+    }
 
     .menu__item {
       &:hover {
@@ -57,14 +60,17 @@
 
   &.hide {
     top: 0;
-    transform: translateY(-100%);
+
+    @include breakpoint(large-desktop) {
+      transform: translateY(-100%);
+    }
   }
 
   &__top {
     position: relative;
     top: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     width: 100%;
     padding: 0.75rem 1rem;
     text-align: center;
@@ -73,25 +79,60 @@
     opacity: 1;
     transition: all 0.4s ease-out;
 
+    @include breakpoint(large-desktop) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &-desktop {
+      display: none;
+      @include breakpoint(large-desktop) {
+        display: block;
+      }
+    }
+
     &.hide {
-      top: -52px;
-      opacity: 0;
+      @include breakpoint(large-desktop) {
+        top: -52px;
+        opacity: 0;
+      }
     }
 
     &-phone {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(large-desktop) {
+        display: block;
+      }
+
       a {
         display: flex;
         justify-content: center;
         align-items: center;
         column-gap: 1rem;
-        font: 400 1.75rem/1 "Roboto", sans-serif;
+        font: 400 1rem/1 "Roboto", sans-serif;
+
+        @include breakpoint(large-desktop) {
+          font: 400 1.75rem/1 "Roboto", sans-serif;
+        }
       }
     }
 
     &-social {
-      display: flex;
-      column-gap: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 1rem;
       align-items: center;
+
+      a {
+        width: 2rem;
+      }
+
+      @include breakpoint(large-desktop) {
+        display: flex;
+        align-items: center;
+        column-gap: 2.5rem;
+      }
     }
   }
 
@@ -125,10 +166,13 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      max-width: 77rem;
       margin: 0 auto;
       padding: 0 1rem;
       column-gap: 1rem;
+
+      @include breakpoint(large-desktop) {
+        max-width: 77rem;
+      }
     }
 
     &.bckg {
@@ -140,23 +184,36 @@
     position: relative;
     transition: opacity 0.4s ease-in-out;
 
+    img {
+      width: 6rem;
+      height: 3rem;
+
+      @include breakpoint(large-desktop) {
+        width: inherit;
+        height: inherit;
+      }
+    }
+
     &-red,
     &-white {
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
       opacity: 0;
       visibility: hidden;
+      transform: translate(0%, -50%);
     }
 
-    &:hover {
-      .custom-logo-link {
-        opacity: 0;
-      }
+    @include breakpoint(large-desktop) {
+      &:hover {
+        .custom-logo-link {
+          opacity: 0;
+        }
 
-      .logo-red {
-        opacity: 1;
-        visibility: visible;
+        .logo-red {
+          opacity: 1;
+          visibility: visible;
+        }
       }
     }
   }
@@ -168,6 +225,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
+    background-color: $color-black;
 
     @include breakpoint(large-desktop) {
       display: block;
@@ -176,6 +234,7 @@
       left: initial;
       width: auto;
       height: auto;
+      background-color: inherit;
     }
 
     &__wrapper {
@@ -183,10 +242,12 @@
       flex-direction: column;
       column-gap: 1rem;
       height: 100%;
+      overflow-y: auto;
 
       @include breakpoint(large-desktop) {
         flex-direction: row;
         height: auto;
+        overflow-y: initial;
       }
     }
 
@@ -211,22 +272,26 @@
         }
       }
 
-      &:hover {
-        .menu__item-link {
-          color: $color-red;
-        }
+      @include breakpoint(large-desktop) {
 
-        &:after {
-          width: 100%;
-          background-color: $color-red;
-        }
-
-        .submenu {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
+        &:hover {
+          .menu__item-link {
+            color: $color-red;
+          }
+  
+          &:after {
+            width: 100%;
+            background-color: $color-red;
+          }
+  
+          .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+          }
         }
       }
+
     }
   }
 
@@ -246,13 +311,14 @@
 
   // level 1
   .submenu {
+    display: none;
     position: relative;
     width: 100%;
     padding: 1rem 0;
     transition: all 0.2s ease-in-out;
-    background-color: $color-black-100;
 
     @include breakpoint(large-desktop) {
+      display: block;
       position: absolute;
       top: 1.25rem;
       right: 0;
@@ -261,6 +327,7 @@
       opacity: 0;
       visibility: hidden;
       transform: translateY(1rem);
+      background-color: $color-black-100;
     }
 
     &__item {
@@ -268,15 +335,17 @@
         position: relative;
         padding: 0.3rem 1rem;
 
-        &:hover {
-          .level-1 {
-            color: $color-red;
-            display: block;
-            transform: translateX(1rem);
-          }
-          .submenu-submenu {
-            opacity: 1;
-            visibility: visible;
+        @include breakpoint(large-desktop) {
+          &:hover {
+            .level-1 {
+              color: $color-red;
+              display: block;
+              transform: translateX(1rem);
+            }
+            .submenu-submenu {
+              opacity: 1;
+              visibility: visible;
+            }
           }
         }
       }
@@ -288,7 +357,6 @@
       width: 100%;
       padding: 1rem 0;
       transition: all 0.2s ease-in-out;
-      background-color: $color-black-100;
 
       @include breakpoint(large-desktop) {
         position: absolute;
@@ -300,6 +368,7 @@
         opacity: 0;
         visibility: hidden;
         transform: translateY(1rem);
+        background-color: $color-black-100;
       }
 
       &__item {
@@ -311,16 +380,18 @@
             width: 8rem;
           }
 
-          &:hover {
-            .level-2 {
-              color: $color-red;
-              display: block;
-              transform: translateX(1rem);
-            }
+          @include breakpoint(large-desktop) {
+            &:hover {
+              .level-2 {
+                color: $color-red;
+                display: block;
+                transform: translateX(1rem);
+              }
 
-            .submenu-submenu-submenu {
-              opacity: 1;
-              visibility: visible;
+              .submenu-submenu-submenu {
+                opacity: 1;
+                visibility: visible;
+              }
             }
           }
         }
@@ -334,30 +405,36 @@
       }
 
       &-submenu {
-        position: absolute;
-        top: -1.7rem;
-        left: 100%;
         width: max-content;
-        margin-top: -0.3rem;
         padding: 1rem 0;
-        opacity: 0;
-        visibility: hidden;
         transition: all 0.2s ease-in-out;
-        transform: translateY(1rem);
-        background-color: $color-black-100;
+        
+        @include breakpoint(large-desktop) {
+          position: absolute;
+          top: -1.7rem;
+          left: 100%;
+          margin-top: -0.3rem;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(1rem);
+          background-color: $color-black-100;
+        }
 
         &__item {
           &-link {
             position: relative;
             padding: 0.3rem 1rem;
 
-            &:hover {
-              .level-3 {
-                color: $color-red;
-                display: block;
-                transform: translateX(1rem);
+            @include breakpoint(large-desktop) {
+              &:hover {
+                .level-3 {
+                  color: $color-red;
+                  display: block;
+                  transform: translateX(1rem);
+                }
               }
             }
+
           }
         }
 

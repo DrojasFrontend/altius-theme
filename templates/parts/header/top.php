@@ -1,5 +1,5 @@
 <div class="header__top">
-  <div></div>
+  <div class="header__top-desktop"></div>
   <div class="header__top-phone">
     <a href="tel:0800-8911">
       <img class="" src="<?= IMG_BASE; ?>icons/icon-phone.svg" alt="" width="" height="" loading="lazy">

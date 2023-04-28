@@ -29,7 +29,7 @@
           figure {
             height: 100%;
           }
-          
+
           @include breakpoint(large-desktop) {
             height: auto;
           }
@@ -55,7 +55,7 @@
         color: $color-white;
         transform: translate(-50%, 0);
         z-index: 2;
-        
+
         @include breakpoint(large-desktop) {
           font: 600 2.5rem/1.3 "Roboto", sans-serif;
           left: 50%;
@@ -68,6 +68,8 @@
         &-button {
           &-prev,
           &-next {
+            width: 1.5rem;
+            height: 1.5rem;
             border: 0;
             background-color: transparent;
             &:after {
@@ -105,7 +107,7 @@
       margin: 0 auto;
       padding: 2rem 1rem 5rem;
       column-gap: 2.5rem;
-      
+
       @include breakpoint(large-desktop) {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -172,7 +174,7 @@
       }
 
       iframe {
-        width: 100%
+        width: 100%;
       }
 
       &__link {
@@ -203,12 +205,12 @@
       }
 
       h3 {
-        font: 600 1.3rem/1 'Roboto', sans-serif;
+        font: 600 1.3rem/1 "Roboto", sans-serif;
         color: $color-red;
         margin-bottom: 1rem;
 
         @include breakpoint(large-desktop) {
-          font: 600 1.875rem/1 'Roboto', sans-serif;
+          font: 600 1.875rem/1 "Roboto", sans-serif;
         }
       }
 
@@ -277,7 +279,7 @@
         }
 
         .excerpt {
-          font: 400 .9rem/1.2 "Roboto", sans-serif;
+          font: 400 0.9rem/1.2 "Roboto", sans-serif;
           margin-bottom: 1rem;
 
           @include breakpoint(large-desktop) {
@@ -311,13 +313,16 @@
     &-bckg {
       position: relative;
       width: 100%;
-      height: 47rem;
       padding: 0;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       overflow: hidden;
+
+      @include breakpoint(large-desktop) {
+        height: 47rem;
+      }
 
       &::before {
         content: "";
@@ -333,18 +338,28 @@
 
     &-wrapper {
       position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 77rem;
       height: 100%;
       margin: 0 auto;
-      padding: 16rem 1rem 0 4rem;
+      padding: 16rem 1rem 1rem;
       column-gap: 1rem;
+
+      @include breakpoint(large-desktop) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 77rem;
+        padding: 16rem 1rem 0 4rem;
+      }
     }
 
     &-logo {
-      width: 25rem;
+      width: 15rem;
+      margin: 0 auto 2rem;
+
+      @include breakpoint(large-desktop) {
+        width: 25rem;
+        margin: 0;
+      }
     }
   }
 
@@ -357,21 +372,24 @@
     }
 
     &__position {
-      width: 20rem;
       margin: 0 auto;
       margin-right: 0;
       padding: 1.5rem;
       background: rgba(174, 38, 44, 0.7098039216) 0 0 no-repeat;
       -webkit-backdrop-filter: blur(0.5625rem);
       backdrop-filter: blur(0.5625rem);
-      height: 25rem;
       overflow: scroll;
 
       animation-duration: 1s;
       animation-fill-mode: both;
 
-      &.wobble-active {
-        animation-name: wobble-reverse;
+      @include breakpoint(large-desktop) {
+        width: 20rem;
+        height: 25rem;
+
+        &.wobble-active {
+          animation-name: wobble-reverse;
+        }
       }
 
       @keyframes wobble-reverse {
@@ -446,8 +464,13 @@
       }
 
       h4 {
+        font: 500 0.9rem/1 "Roboto", sans-serif;
         padding: 0.5rem 0;
         color: $color-white;
+
+        @include breakpoint(large-desktop) {
+          font: 500 1rem/1 "Roboto", sans-serif;
+        }
       }
 
       label {
@@ -540,7 +563,7 @@
 
       .sf-field-submit {
         input[type="submit"] {
-          font: 500 1.2rem/1 "Roboto", sans-serif;
+          font: 500 1rem/1 "Roboto", sans-serif;
           width: 100%;
           padding: 1rem;
           border: 0.15rem solid $color-white;
@@ -548,6 +571,10 @@
           background-color: transparent;
           cursor: pointer;
           transition: all 0.3s ease;
+
+          @include breakpoint(large-desktop) {
+            font: 500 1.2rem/1 "Roboto", sans-serif;
+          }
 
           &:hover {
             color: $color-black;
@@ -631,13 +658,20 @@
   &__copy {
     &-bckg {
       position: relative;
-      padding: 8rem 0 0 0;
+      padding: 2rem 1rem;
+
+      @include breakpoint(large-desktop) {
+        padding: 8rem 0 0 0;
+      }
     }
 
     &-wrapper {
       display: grid;
-      grid-template-columns: 30% 67%;
       column-gap: 1rem;
+
+      @include breakpoint(large-desktop) {
+        grid-template-columns: 30% 67%;
+      }
 
       figure {
         margin: 0;
@@ -651,12 +685,21 @@
     }
 
     &-copy {
-      padding-right: 2rem;
+      padding-top: 2rem;
+
+      @include breakpoint(large-desktop) {
+        padding: 0 2rem 0 0;
+      }
+
       p,
       ul {
-        font: 300 1.2rem/1.3 "Roboto", sans-serif;
+        font: 300 1rem/1.3 "Roboto", sans-serif;
         text-align: justify;
         color: $color-white;
+
+        @include breakpoint(large-desktop) {
+          font: 300 1.2rem/1.3 "Roboto", sans-serif;
+        }
       }
 
       p {
@@ -664,7 +707,11 @@
       }
 
       ul {
-        padding: 0 0 3rem 3rem;
+        padding: 0 0 0 1rem;
+
+        @include breakpoint(large-desktop) {
+          padding: 0 0 3rem 3rem;
+        }
       }
 
       li {
@@ -690,8 +737,13 @@
     }
 
     &-wrapper {
-      display: grid;
-      grid-template-columns: 65% 35%;
+      display: flex;
+      flex-direction: column-reverse;
+
+      @include breakpoint(large-desktop) {
+        display: grid;
+        grid-template-columns: 65% 35%;
+      }
 
       figure {
         margin: 0;
@@ -705,49 +757,80 @@
     }
 
     &-title {
-      padding: 5rem 0 2rem 23%;
+      padding: 2rem 1rem;
+
+      @include breakpoint(large-desktop) {
+        padding: 5rem 0 2rem 23%;
+      }
+
       .h2 {
-        font: 600 3rem/1.5 Roboto, sans-serif;
+        font: 600 1.5rem/1.5 Roboto, sans-serif;
         color: $color-white;
+        text-align: center;
+
+        @include breakpoint(large-desktop) {
+          font: 600 3rem/1.5 Roboto, sans-serif;
+          text-align: left;
+        }
       }
     }
 
     &-item {
       &s {
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 4%;
-        row-gap: 4rem;
-        padding: 0 1rem 150px 5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0 1rem 2rem;
+
+        @include breakpoint(large-desktop) {
+          grid-template-columns: repeat(5, 1fr);
+          column-gap: 4%;
+          padding: 0 1rem 9.3rem 5rem;
+        }
       }
 
       img {
-        width: 4rem;
-        height: 4rem;
+        width: 3rem;
+        height: 3rem;
         margin: 0 auto 0.5rem;
+
+        @include breakpoint(large-desktop) {
+          width: 4rem;
+          height: 4rem;
+        }
       }
 
       .text {
-        font: 600 0.9rem/1 "Roboto", sans-serif;
+        font: 600 0.8rem/1 "Roboto", sans-serif;
         color: $color-white;
         text-align: center;
         text-transform: uppercase;
+
+        @include breakpoint(large-desktop) {
+          font: 600 0.9rem/1 "Roboto", sans-serif;
+        }
       }
     }
   }
 
   &__gallery {
     background-color: $color-black;
-    padding-bottom: 5rem;
+    padding-bottom: 1rem;
+
+    @include breakpoint(large-desktop) {
+      padding-bottom: 5rem;
+    }
     .swiper {
       &-slide {
         position: relative;
       }
 
       &-slide-thumb-active {
-        transform: scale(1.2);
-        transition: all 0.3s ease;
-        z-index: 1;
+        @include breakpoint(large-desktop) {
+          transform: scale(1.2);
+          transition: all 0.3s ease;
+          z-index: 1;
+        }
       }
 
       &-top {
@@ -783,11 +866,15 @@
 
         .video {
           width: 100%;
-          height: 6.7rem;
+          height: 4rem;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #000;
+          background: $color-black;
+
+          @include breakpoint(large-desktop) {
+            height: 6.7rem;
+          }
         }
 
         .play {
@@ -822,8 +909,16 @@
 
     &-bottom {
       position: relative;
-      width: 70rem;
+      width: 20rem;
       margin: 0 auto;
+
+      @include breakpoint(large-desktop) {
+        width: 48rem;
+      }
+
+      @include breakpoint(xxl-desktop) {
+        width: 70rem;
+      }
 
       .swiper {
         overflow: inherit;
@@ -832,10 +927,18 @@
 
     &-wrapper {
       position: relative;
-      width: 62rem;
+      width: 15rem;
       margin: -3rem auto 0 auto;
       padding: 0 1rem;
       overflow-x: clip;
+
+      @include breakpoint(large-desktop) {
+        width: 38rem;
+      }
+
+      @include breakpoint(xxl-desktop) {
+        width: 62rem;
+      }
     }
 
     &-actions {
@@ -847,11 +950,15 @@
       margin-top: -1.5rem;
 
       button {
-        width: 4rem;
+        width: 3rem;
         border: 0;
         background: transparent;
         &:after {
           display: none;
+        }
+
+        @include breakpoint(large-desktop) {
+          width: 4rem;
         }
       }
     }
@@ -886,15 +993,26 @@
         align-items: center;
         justify-content: center;
         column-gap: 1rem;
-        font: 600 1.7rem/1 "Roboto", sans-serif;
+        font: 600 1rem/1 "Roboto", sans-serif;
         padding: 0.5rem 2rem;
         text-decoration: none;
         color: $color-white;
         border: 0.0625rem solid $color-white;
         z-index: 1;
 
+        @include breakpoint(large-desktop) {
+          font: 600 1.7rem/1 "Roboto", sans-serif;
+        }
+
         &:hover {
           background-color: $color-black;
+        }
+      }
+
+      img {
+        width: 1.5rem;
+        @include breakpoint(large-desktop) {
+          width: auto;
         }
       }
     }
@@ -980,7 +1098,7 @@
         column-gap: 1rem;
         width: 30rem;
         margin: 1rem 0 3rem;
-        padding: .3rem 1rem;
+        padding: 0.3rem 1rem;
         background-color: $color-white;
 
         .text {

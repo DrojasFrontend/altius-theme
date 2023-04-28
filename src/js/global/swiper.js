@@ -58,8 +58,18 @@ var jSwiper = (function($) {
   const swiperBottom = new Swiper(".swiper-bottom", {
     loop: true,
     spaceBetween: 0,
-    slidesPerView: 5,
+    slidesPerView: 2,
     freeMode: true,
+
+    breakpoints: {
+      1280: {
+        slidesPerView: 5,
+      },
+
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   });
 
   const swiperTop = new Swiper(".swiper-top", {
