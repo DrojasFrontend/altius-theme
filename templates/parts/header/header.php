@@ -14,6 +14,9 @@ if (is_page('nosotros')) { ?>
    <div class="header__bottom-wrapper">
       <?php get_template_part('templates/parts/header/logo'); ?>
       <?php get_template_part('templates/parts/header/nav'); ?>
+      <button type="button" class="open-menu">
+        <img class="" src="<?= IMG_BASE; ?>icons/icon-menu.svg" alt="image-1" width="" height="" loading="lazy">
+      </button>
    </div>
  </div>
 </div>

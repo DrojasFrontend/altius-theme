@@ -7,7 +7,7 @@ $fields = get_fields();
       <div>
         <h1 class="h1" data-text-left-right><?= $fields['home_hero_title'] ?></h1>
         <div class="swiper-pagination"></div>
-        <p><?= $fields['home_hero_cta'] ?></p>
+        <p class="home__hero-copy__text"><?= $fields['home_hero_cta'] ?></p>
         <?php get_template_part('templates/parts/icons/line-animate'); ?>
       </div>
       <div class="filter">

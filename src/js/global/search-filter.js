@@ -1,5 +1,15 @@
 var jSearchFilter = (function ($) {  
 
+  if ($('body').hasClass('home')) {
+    var radioBtnType2 = $('.sf-item-95 input[name="_sft_tipo[]"]');
+    radioBtnType2.prop("checked", true);
+  }
+
+  if ($('body').hasClass('single')) {
+    var radioBtnType2 = $('.sf-item-54 input[name="_sft_tipo[]"]');
+    radioBtnType2.prop("checked", true);
+  }
+
   var btnSelected = $(".sf-field-taxonomy-tipo .selected");
 
   var checkedInput = $('.sf-field-taxonomy-tipo input[type="radio"]:checked');

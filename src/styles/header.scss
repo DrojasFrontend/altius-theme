@@ -142,16 +142,14 @@
     transition: all 0.2s ease-in;
 
     &.level-3 {
-      font-size: 0.8rem;
-    }
-  }
+      display: block !important;
+      height: auto !important;
+      font-size: 1rem;
 
-  .navbar__arrow {
-    position: absolute;
-    top: 50%;
-    margin-top: -0.4375rem;
-    right: 0.5rem;
-    width: 1rem;
+      @include breakpoint(large-desktop) {
+        font-size: 0.8rem;
+      }
+    }
   }
 
   &__bottom {
@@ -172,6 +170,19 @@
 
       @include breakpoint(large-desktop) {
         max-width: 77rem;
+      }
+    }
+
+    .open-menu {
+      display: block;
+      width: 2rem;
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      @include breakpoint(large-desktop) {
+        display: none;
       }
     }
 
@@ -219,13 +230,37 @@
   }
 
   .menu {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background-color: $color-black;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.3s ease-in-out;
+    overflow-y: auto;
+
+    &.is-open {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    &__logo {
+      width: 8rem;
+      padding: 0 1rem;
+    }
+
+    &__close {
+      position: absolute;
+      top: 4.6rem;
+      right: 1rem;
+      width: 2rem;
+      padding: 0;
+      background: 0 0;
+      border: 0;
+      cursor: pointer;
+    }
 
     @include breakpoint(large-desktop) {
       display: block;
@@ -234,7 +269,16 @@
       left: initial;
       width: auto;
       height: auto;
+      opacity: 1;
       background-color: inherit;
+      transform: none;
+      overflow-y: inherit;
+
+      &__logo,
+      &__close,
+      &__social {
+        display: none;
+      }
     }
 
     &__wrapper {
@@ -253,6 +297,11 @@
 
     &__item {
       position: relative;
+      padding: 1rem;
+
+      @include breakpoint(large-desktop) {
+        padding: 0;
+      }
       &:after {
         content: "";
         display: block;
@@ -273,17 +322,16 @@
       }
 
       @include breakpoint(large-desktop) {
-
         &:hover {
           .menu__item-link {
             color: $color-red;
           }
-  
+
           &:after {
             width: 100%;
             background-color: $color-red;
           }
-  
+
           .submenu {
             opacity: 1;
             visibility: visible;
@@ -291,7 +339,6 @@
           }
         }
       }
-
     }
   }
 
@@ -309,13 +356,12 @@
     }
   }
 
-  // level 1
+  // Level 1
   .submenu {
     display: none;
     position: relative;
     width: 100%;
     padding: 1rem 0;
-    transition: all 0.2s ease-in-out;
 
     @include breakpoint(large-desktop) {
       display: block;
@@ -328,14 +374,21 @@
       visibility: hidden;
       transform: translateY(1rem);
       background-color: $color-black-100;
+      transition: all 0.2s ease-in-out;
     }
 
     &__item {
       &-link {
         position: relative;
-        padding: 0.3rem 1rem;
+        padding: 1rem;
+
+        .level-1 {
+          display: block;
+          width: 100%;
+        }
 
         @include breakpoint(large-desktop) {
+          padding: 0.3rem 1rem;
           &:hover {
             .level-1 {
               color: $color-red;
@@ -348,17 +401,39 @@
             }
           }
         }
+
+        .navbar__arrow {
+          position: absolute;
+          top: 1.1rem;
+          right: 1rem;
+          width: 1rem;
+          transition: all 0.3s ease;
+          transform: rotate(90deg);
+          z-index: -1;
+
+          &.active {
+            transform: rotate(270deg);
+          }
+
+          @include breakpoint(large-desktop) {
+            transform: rotate(0);
+            top: 50%;
+            margin-top: -0.4375rem;
+            right: 0.5rem;
+          }
+        }
       }
     }
 
-    // level 2
+    // Level 2
     &-submenu {
+      display: none;
       position: relative;
       width: 100%;
       padding: 1rem 0;
-      transition: all 0.2s ease-in-out;
 
       @include breakpoint(large-desktop) {
+        display: block;
         position: absolute;
         top: -99%;
         left: 100%;
@@ -369,6 +444,7 @@
         visibility: hidden;
         transform: translateY(1rem);
         background-color: $color-black-100;
+        transition: all 0.2s ease-in-out;
       }
 
       &__item {
@@ -376,15 +452,43 @@
           position: relative;
           padding: 0.3rem 1rem;
 
+          a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 3rem;
+          }
+
           .thumbnail-menu {
             width: 8rem;
+          }
+
+          .navbar__arrow {
+            position: absolute;
+            top: 1.1rem;
+            right: 1rem;
+            width: 1rem;
+            z-index: -1;
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+
+            &.active {
+              transform: rotate(270deg);
+            }
+
+            @include breakpoint(large-desktop) {
+              transform: rotate(0);
+              top: 50%;
+              margin-top: -0.4375rem;
+              right: 0.5rem;
+            }
           }
 
           @include breakpoint(large-desktop) {
             &:hover {
               .level-2 {
                 color: $color-red;
-                display: block;
+                display: flex;
                 transform: translateX(1rem);
               }
 
@@ -398,17 +502,21 @@
       }
 
       &-submenu {
-        display: grid;
-        &.more-row {
-          grid-template-columns: repeat(2, 1fr);
+        display: none;
+        @include breakpoint(large-desktop) {
+          display: block;
+          &.more-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
         }
       }
 
+      // Level 3
       &-submenu {
         width: max-content;
         padding: 1rem 0;
-        transition: all 0.2s ease-in-out;
-        
+
         @include breakpoint(large-desktop) {
           position: absolute;
           top: -1.7rem;
@@ -418,12 +526,32 @@
           visibility: hidden;
           transform: translateY(1rem);
           background-color: $color-black-100;
+          transition: all 0.2s ease-in-out;
         }
 
         &__item {
           &-link {
             position: relative;
             padding: 0.3rem 1rem;
+
+            .navbar__arrow {
+              position: absolute;
+              top: 1.1rem;
+              right: 1rem;
+              width: 1rem;
+              transition: all 0.3s ease;
+              transform: rotate(90deg);
+
+              &.active {
+                transform: rotate(270deg);
+              }
+
+              @include breakpoint(large-desktop) {
+                top: 50%;
+                margin-top: -0.4375rem;
+                right: 0.5rem;
+              }
+            }
 
             @include breakpoint(large-desktop) {
               &:hover {
@@ -434,14 +562,15 @@
                 }
               }
             }
-
           }
         }
 
         &-submenu {
-          display: grid;
-          &.more-row {
-            grid-template-columns: repeat(2, 1fr);
+          @include breakpoint(large-desktop) {
+            &.more-row {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+            }
           }
         }
       }

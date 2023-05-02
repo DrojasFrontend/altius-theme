@@ -3,7 +3,7 @@ jQuery(function ($) {
   if(jAnimation) {
     jAnimation.load("body");
   }
-
+  
   if(jSearchFilter) {
     jSearchFilter.load(".filter");
   }

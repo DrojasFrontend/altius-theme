@@ -16,7 +16,7 @@
   $type = isset($_GET['_sft_tipo']) ? $_GET['_sft_tipo'] : '';
 ?>
 <?php 
-  if ($type == 'apartamento') { ?>
+  if ($type == 'vivienda') { ?>
     <section class="result__apartment">
       <div class="container">
         <div class="result__apartment-wrapper">
@@ -85,7 +85,7 @@
                           <div class="modal-content__wrapper">
                             <div class="modal-content__wrapper-left">
                               <span class="line"></span>
-                              <p class="h4">Apartamento: <span class="red">2305</span></p>
+                              <p class="h4">Apartamento: <span class="red"><?= the_title();?></span></p>
                               <figure class="modal-content__img">
                                 <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
                               </figure>
@@ -104,9 +104,16 @@
                         </div>
                         <footer>
                           <button type="button" class="modal-content__btn open-form">Consultar</button>
-                          <a href="#" class="modal-content__btn" target="_blank">Descargar</a>
+                          <a href="<?php the_field("brochure") ?>" class="modal-content__btn" target="_blank">Descargar</a>
                           <?= do_shortcode('[contact-form-7 id="1381" title="Formulario Propiedad" html_class="contact-form"]') ?>
-                          <p id="display-price" class="display-price">USD <?php the_field("precious") ?></p>
+                          <p id="display-price" class="display-price">
+                            USD 
+                            <?php 
+                              $precious = get_field("precious");
+                              $formatted_precious = number_format($precious, 0, ".", "."); 
+                              echo '$', $formatted_precious;
+                            ?>
+                          </p>
                         </footer>
                       </div>
                     </div>
@@ -162,26 +169,28 @@
       </div>
     </section>
 
-  <?php } else if ($type == 'local-comercial') { ?>
+  <?php } else if ($type == 'local' || $type == 'oficina') { ?>
     <section class="result__local">
       <div class="container">
         <div class="result__local-wrapper">
           <div class="result__local-loop">
-            <h2 class="h2 title">
-              Locales Comerciales
-            </h2>
-            <p class="text count">
-              <?php 
-                if ( $query->have_posts() ) { 
-                  $count = $query->found_posts;
-                  if ($count > 1) {
-                    echo "$count resultados";
-                  } else {
-                    echo "$count resultado";
+            <div class="desk">
+              <h2 class="h2 title">
+                Locales Comerciales
+              </h2>
+              <p class="text count">
+                <?php 
+                  if ( $query->have_posts() ) { 
+                    $count = $query->found_posts;
+                    if ($count > 1) {
+                      echo "$count resultados";
+                    } else {
+                      echo "$count resultado";
+                    }
                   }
-                }
-              ?>
-            </p>
+                ?>
+              </p>
+            </div>
             <ul class="result__local-items">
               <?php $key = 0; ?>
               <?php if ( $query->have_posts() ) { ?>
@@ -191,15 +200,22 @@
                     <figure>
                       <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
                     </figure>
-                    <span class="status">Entrega Inmediata</span>
+                    <span class="status"><?php the_field("condicin") ?></span>
                     <div class="info">
                       <div class="bottom">
-                        <span class="view">ver más</span>
-                        <h5 class="name">Nostrum Bay</h5>
-                        <p class="text">Local sobre Av. Italia esq.</p>
-                        <p class="text">Erevan - EN OBRA</p>
-                        <p class="text metro">120 m²</p>
-                        <p class="price"><strong>USD $821.600</strong></p>
+                        <!-- <span class="view">ver más</span> -->
+                        <h5 class="name"><?php the_field("condicin") ?></h5>
+                        <p class="text"><?php the_field("barrio") ?></p>
+                        <p class="text">Erevan - <?php the_field("condicin") ?></p>
+                        <p class="text metro"><?php the_field("m2totales") ?> m²</p>
+                        <p class="price">
+                          <strong>USD
+                          <?php 
+                            $precious = get_field("precious");
+                            $formatted_precious = number_format($precious, 0, ".", "."); 
+                            echo '$', $formatted_precious;
+                          ?>
+                          </strong></p>
                       </div>
                     </div>
                   </a>
@@ -214,17 +230,39 @@
                     ?>
                   </div>
 
+                  <div class="result__apartment-filter__form mobile">
+                    <h3 class="h3">CONTÁCTANOS</h3>
+                    <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
+                  </div>
+
                 <?php } else { ?>
                   <h2 class="h3">No se han encontrado resultados</h2>
               <?php } ?>
             </ul>
           </div>
           <div class="result__apartment-filter">
+            <div class="mobile">
+              <h2 class="h2 title">
+                Locales Comerciales
+              </h2>
+              <p class="text count">
+                <?php 
+                  if ( $query->have_posts() ) { 
+                    $count = $query->found_posts;
+                    if ($count > 1) {
+                      echo "$count resultados";
+                    } else {
+                      echo "$count resultado";
+                    }
+                  }
+                ?>
+              </p>
+            </div>
             <div class="result__apartment-filter__shortcode">
               <h2 class="h3">BUSCÁ</h2>
               <?php echo do_shortcode('[searchandfilter id="591"]'); ?>
             </div>
-            <div class="result__apartment-filter__form">
+            <div class="result__apartment-filter__form desk">
               <h3 class="h3">CONTÁCTANOS</h3>
               <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
             </div>
@@ -232,8 +270,7 @@
         </div>
       </div>
     </section>
-  <?php } else if ($type == 'oficina') { ?>
-  <?php } 
+  <?php }
 
 ?>
 <script>
