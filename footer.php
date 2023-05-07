@@ -20,7 +20,7 @@
 	
 
 	<?php 
-		if(is_front_page() || is_home()) { ?>
+		if(is_front_page() || is_home() || is_single('vendido')) { ?>
 			<style>
 				.footer::before {
 					background: #f0000075;

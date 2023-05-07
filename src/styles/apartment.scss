@@ -462,26 +462,30 @@
 
           .sf-range-prefix {
             &:nth-child(1) {
-              font: 500 .8rem/.9 "Roboto", sans-serif;
+              font: 500 .7rem/1.6 "Roboto",sans-serif;
               position: absolute;
-              top: 0.6rem;
-              left: 0.3rem;
+              top: 0;
+              left: 0;
               z-index: 1;
+              padding: .5rem .2rem .3rem .3rem;
+              background: #dfdfdf;
             }
 
             &:nth-child(4) {
-              font: 500 .8rem/.9 "Roboto", sans-serif;
+              font: 500 .7rem/1.6 "Roboto",sans-serif;
               position: absolute;
-              top: 0.6rem;
+              top: 0;
               right: 4.3rem;
               z-index: 1;
+              padding: .5rem .2rem .3rem .3rem;
+              background: #dfdfdf;
             }
           }
 
           .sf-input-range-number {
-            font: 500 .8rem/.9 "Roboto", sans-serif;
+            font: 500 0.8rem/0.9 "Roboto", sans-serif;
             max-width: 7rem;
-            padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+            padding: 0.5rem 0.8rem 0.5rem 2rem;
             text-align: center;
             color: $color-black;
             background-color: $color-white-200;
@@ -936,11 +940,19 @@
   }
 
   &__local {
-    padding: 15rem 0 8rem 0;
+    padding: 6rem 0 8rem 0;
     background-color: $color-black;
 
     @include breakpoint(large-desktop) {
-      padding: 23rem 0 8rem 0;
+      padding: 6rem 0 8rem 0;
+    }
+
+    &.padding {
+      padding: 15rem 0 2rem 0;
+  
+      @include breakpoint(large-desktop) {
+        padding: 23rem 0 8rem 0;
+      }
     }
 
     .mobile {
@@ -959,7 +971,7 @@
     }
 
     .desk {
-      display: none
+      display: none;
     }
 
     @include breakpoint(large-desktop) {
@@ -1025,7 +1037,7 @@
         padding: 1rem;
         background-color: $color-black-100;
         transition: all 0.3s ease;
-        
+
         @include breakpoint(large-desktop) {
           opacity: 0;
           visibility: hidden;
@@ -1035,7 +1047,7 @@
         .bottom {
           transition: all 0.3s ease;
           transition-delay: 0.2s, 500ms;
-          
+
           @include breakpoint(large-desktop) {
             opacity: 0;
             visibility: hidden;
@@ -1069,11 +1081,7 @@
 
       .text {
         color: $color-white;
-        margin-bottom: 2rem;
-
-        @include breakpoint(large-desktop) {
-          margin-bottom: 3rem;
-        }
+        margin-bottom: 1rem;
       }
 
       .metro {
@@ -1169,6 +1177,7 @@
       @include breakpoint(tablet) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 1rem;
       }
 
       figure {

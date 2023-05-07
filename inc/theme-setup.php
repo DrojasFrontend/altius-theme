@@ -99,18 +99,6 @@ if ( ! function_exists( 'altius_theme_setup' ) ) {
 				}, false );
 			</script>
 		<?php }
-
-		// Enable first filter Home
-		add_action( 'wp_footer', 'enable_first_filter' );
-		function enable_first_filter() { 
-			if(is_front_page() || is_home()) : ?>
-			<script type="text/javascript">
-				var radioBtnType1 = $('.sf-item-0 input[name="_sft_tipo[]"]');
-				var radioBtnType2 = $('.sf-item-25 input[name="_sft_tipo[]"]');
-				radioBtnType1.removeAttr("checked");
-				radioBtnType2.prop("checked", true);
-			</script>
-		<?php endif; }
 	}
 }
 add_action( 'after_setup_theme', 'altius_theme_setup' );

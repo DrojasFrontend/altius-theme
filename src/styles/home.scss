@@ -33,7 +33,6 @@
           padding: 0;
         }
 
-
         &-bullet {
           width: 3.5rem;
           height: 0.4rem;
@@ -196,11 +195,11 @@
         background: rgba(174, 38, 44, 0.7098039216) 0 0 no-repeat;
         -webkit-backdrop-filter: blur(0.5625rem);
         backdrop-filter: blur(0.5625rem);
-        overflow: scroll;
-        
+        overflow-y: auto;
+
         animation-duration: 1s;
         animation-fill-mode: both;
-        
+
         @include breakpoint(xxl-desktop) {
           position: absolute;
           top: 0;
@@ -354,26 +353,35 @@
 
             .sf-range-prefix {
               &:nth-child(1) {
+                font: 500 .7rem/1.6 "Roboto",sans-serif;
                 position: absolute;
-                top: 0.5rem;
-                left: 0.3rem;
+                top: 0;
+                left: 0;
                 z-index: 1;
+                padding: .5rem .2rem .3rem .3rem;
+                background: #dfdfdf;
               }
 
               &:nth-child(4) {
+                font: 500 .7rem/1.6 "Roboto",sans-serif;
                 position: absolute;
-                top: 0.5rem;
+                top: 0;
                 right: 4.3rem;
                 z-index: 1;
+                padding: .5rem .2rem .3rem .3rem;
+                background: #dfdfdf;
               }
             }
 
             .sf-input-range-number {
-              font: 500 1rem/1 "Roboto", sans-serif;
-              padding: 0.5rem 0.8rem 0.5rem 1.2rem;
+              font: 500 0.8rem/0.9 "Roboto", sans-serif;
+              max-width: 7rem;
+              padding: .5rem .8rem .5rem 2rem;
               text-align: center;
               color: $color-black;
               background-color: $color-white-200;
+              border: 0;
+              text-align: left;
             }
           }
         }

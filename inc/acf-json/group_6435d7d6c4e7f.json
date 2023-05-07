@@ -20,8 +20,68 @@
             "endpoint": 0
         },
         {
+            "key": "field_6455401e2006b",
+            "label": "ID",
+            "name": "id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_645540762006c",
+            "label": "Nombre del proyecto",
+            "name": "nombre_del_proyecto",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e8ed15aaf",
+            "label": "Tipo",
+            "name": "tipo",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6435e8d615aac",
-            "label": "ciudad",
+            "label": "Ciudad",
             "name": "ciudad",
             "aria-label": "",
             "type": "text",
@@ -41,7 +101,7 @@
         },
         {
             "key": "field_6435e8e015aad",
-            "label": "barrio",
+            "label": "Barrio",
             "name": "barrio",
             "aria-label": "",
             "type": "text",
@@ -61,68 +121,8 @@
         },
         {
             "key": "field_6435e8ea15aae",
-            "label": "condicin",
-            "name": "condicin",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e8ed15aaf",
-            "label": "tipo",
-            "name": "tipo",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e8fc15ab0",
-            "label": "torre",
-            "name": "torre",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e91115ab1",
-            "label": "piso",
-            "name": "piso",
+            "label": "Condición (avance de obra)",
+            "name": "condicion_avance_de_obra",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -141,7 +141,7 @@
         },
         {
             "key": "field_6435e91915ab2",
-            "label": "dorm",
+            "label": "Dorm",
             "name": "dorm",
             "aria-label": "",
             "type": "text",
@@ -160,149 +160,9 @@
             "append": ""
         },
         {
-            "key": "field_6435e92015ab3",
-            "label": "tipologia",
-            "name": "tipologia",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e93515ab6",
-            "label": "m2totales",
-            "name": "m2totales",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e93c15ab7",
-            "label": "m2intterrcub",
-            "name": "m2intterrcub",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e94315ab8",
-            "label": "m2internos",
-            "name": "m2internos",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e94915ab9",
-            "label": "m2terrcub",
-            "name": "m2terrcub",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e95015aba",
-            "label": "m2terrdesc",
-            "name": "m2terrdesc",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6435e95615abb",
-            "label": "m2espcomunes",
-            "name": "m2espcomunes",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_6435e95c15abc",
-            "label": "precious",
-            "name": "precious",
+            "label": "Precio",
+            "name": "precio",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -321,7 +181,7 @@
         },
         {
             "key": "field_6435e96315abd",
-            "label": "status",
+            "label": "Status",
             "name": "status",
             "aria-label": "",
             "type": "text",
@@ -340,9 +200,169 @@
             "append": ""
         },
         {
-            "key": "field_6450145037e62",
-            "label": "Imagen (tipología color)",
-            "name": "imagen_tipologia_color",
+            "key": "field_6435e92015ab3",
+            "label": "Tipologia",
+            "name": "tipologia",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6455412d2006d",
+            "label": "Unidad",
+            "name": "unidad",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e93515ab6",
+            "label": "M2 TOTALES",
+            "name": "m2_totales",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e93c15ab7",
+            "label": "M2 INTERNOS",
+            "name": "m2_internos",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e94315ab8",
+            "label": "M2 TERR CUB",
+            "name": "m2_terr_cub",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e94915ab9",
+            "label": "M2 TERR DESC",
+            "name": "m2_terr_desc",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e95015aba",
+            "label": "M2 ESP. COMUNES",
+            "name": "m2_esp_comunes",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6435e95615abb",
+            "label": "Vista Previa (Imagen)",
+            "name": "vista_previa_imagen",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_645543865300c",
+            "label": "Ruta pdf (tipologia cad)",
+            "name": "ruta_pdf_tipologia_cad",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -361,28 +381,8 @@
         },
         {
             "key": "field_6450145a37e63",
-            "label": "Imagen (tipología CAD)",
-            "name": "imagen_tipologia_cad",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6450146437e64",
-            "label": "Imagen (render)",
-            "name": "imagen_render",
+            "label": "Ruta pdf (tipologia color)",
+            "name": "ruta_pdf_tipologia_color",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -418,6 +418,46 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6450145037e62",
+            "label": "Descripción (locales)",
+            "name": "descripcion_locales",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_645542262006e",
+            "label": "Dirección",
+            "name": "direccion",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -438,5 +478,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682969721
+    "modified": 1683309472
 }

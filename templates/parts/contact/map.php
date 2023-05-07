@@ -6,8 +6,6 @@
 </style>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-
-
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlI8leb8D4SoFFksEnxFt0caXUvGwcdH0&libraries=places"></script>
 <script src=""></script>
 	<script>

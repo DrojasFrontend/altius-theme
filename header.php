@@ -17,6 +17,8 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' - '; } ?><?php bloginfo('name'); ?></title>
+	<meta name="google-site-verification" content="E3Zs4O1X57SMjNyXgzoSllAvlaOtfdh7XUbTwWgTjjg" />
+
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 

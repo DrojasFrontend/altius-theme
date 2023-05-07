@@ -76,9 +76,29 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_template",
                 "operator": "==",
-                "value": "page"
+                "value": "templates\/about-template.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/contact-template.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/home-template.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/news-template.php"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/resultado-propiedades.php"
             }
         ]
     ],
@@ -91,5 +111,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681147917
+    "modified": 1683044730
 }

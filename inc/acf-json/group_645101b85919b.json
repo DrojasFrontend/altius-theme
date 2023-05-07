@@ -1,10 +1,10 @@
 {
-    "key": "group_64277557894aa",
-    "title": "Header",
+    "key": "group_645101b85919b",
+    "title": "Vendido",
     "fields": [
         {
-            "key": "field_64277557f16c0",
-            "label": "Header",
+            "key": "field_645101b85ab3d",
+            "label": "Hero",
             "name": "",
             "aria-label": "",
             "type": "tab",
@@ -20,9 +20,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_64277578c0c8f",
-            "label": "Logo Rojo",
-            "name": "logo_red",
+            "key": "field_645101b85ab43",
+            "label": "Imagen",
+            "name": "vendido_hero_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -42,12 +42,12 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "full"
         },
         {
-            "key": "field_64277594c0c90",
-            "label": "Logo Negro",
-            "name": "logo_black",
+            "key": "field_645101b85ab47",
+            "label": "Logo",
+            "name": "vendido_hero_logo",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -67,14 +67,92 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
+            "preview_size": "large"
         },
         {
-            "key": "field_64510fb317ba8",
-            "label": "Teléfono",
-            "name": "header_phone",
+            "key": "field_645101b85ab4a",
+            "label": "Descripción",
+            "name": "",
             "aria-label": "",
-            "type": "text",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_645101b85ab4d",
+            "label": "Fondo",
+            "name": "vendido_detail_bckg",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#292929",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_645101b85ab50",
+            "label": "Imagen",
+            "name": "vendido_detail_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "large"
+        },
+        {
+            "key": "field_645101b85ab53",
+            "label": "Color texto",
+            "name": "vendido_detail_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffffff",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
+            "key": "field_645101b85ab56",
+            "label": "Detalle",
+            "name": "vendido_detail",
+            "aria-label": "",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -84,17 +162,17 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
-            "key": "field_64511087a264c",
-            "label": "Facebook Link",
-            "name": "social_facebook_link",
+            "key": "field_645101b85ab68",
+            "label": "Galeria",
+            "name": "",
             "aria-label": "",
-            "type": "text",
+            "type": "tab",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -103,18 +181,15 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_64511117a2653",
-            "label": "Facebook Icon",
-            "name": "social_facebook_icon",
+            "key": "field_645101b85ab6b",
+            "label": "Galeria Slide Grandes",
+            "name": "vendido_galery_slide",
             "aria-label": "",
-            "type": "image",
+            "type": "gallery",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -123,8 +198,10 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
+            "return_format": "array",
             "library": "all",
+            "min": "",
+            "max": "",
             "min_width": "",
             "min_height": "",
             "min_size": "",
@@ -132,150 +209,16 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_645110c7a264e",
-            "label": "Instagram Link",
-            "name": "social_instagram_link",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64511122a2654",
-            "label": "Instagram Icon",
-            "name": "social_instagram_icon",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_645110d9a264f",
-            "label": "Youtube Link",
-            "name": "social_youtube_link",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_64511146a2655",
-            "label": "Youtube Icon",
-            "name": "social_youtube_icon",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_64511100a2651",
-            "label": "Email Link",
-            "name": "social_email_link",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6451115ea2656",
-            "label": "Email Icon",
-            "name": "social_email_icon",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "medium"
+            "insert": "append",
+            "preview_size": "full"
         }
     ],
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "post_type",
                 "operator": "==",
-                "value": "page-header"
+                "value": "vendido"
             }
         ]
     ],
@@ -288,5 +231,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683034478
+    "modified": 1683030776
 }

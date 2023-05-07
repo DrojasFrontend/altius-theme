@@ -42,13 +42,21 @@ get_header(); ?>
         <div class="properties__detail-wrapper">
           <div>
             <h1 class="h3"><?= the_title(); ?></h1>
-            <p class="text">Local sobre Av. Italia esq. Erevan</p>
+            <p class="text"><?php the_field("barrio") ?> - <?php the_field("direccion") ?></p>
             <div class="box">
-              <span class="text">Venta: <strong>US $821.600</strong></span>
-              <span class="text">Alquiler: <strong>US $6.004</strong></span>
+              <span class="text">Venta: <strong>USD <?= get_field("precio"); ?></strong></span>
+              <!-- <span class="text">Alquiler: <strong>US $6.004</strong></span> -->
             </div>
             <div class="properties__detail-img">
               <img class="" src="<?= IMG_BASE; ?>placeholder-1920.jpeg" alt="prev" width="" height="" loading="lazy">
+            </div>
+
+            <div class="properties__detail-bottom">
+              <p class="text">Tipo de propiedad: <strong><?php the_field("tipo") ?></strong></p>
+              <h4 class="h3">Descripción</h4>
+              <p class="text">
+              Amplio Local comercial sobra Av. Italia esq Erevan, ubicado en la planta baja de la torre Nostrum Malvín. Una torre diseñada por los reconocidos arquitectos Carlos Ott en asociación con Carlos Ponce de León que contará con 225 unidades de vivienda Monoambientes, 1, 2 y 3 dormitorios asegurando un amplio flujo de personas durante todo el día.
+              </p>
             </div>
           </div>
           <div>

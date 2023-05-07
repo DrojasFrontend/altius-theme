@@ -48,12 +48,13 @@
                     <div class="result__apartment-item__img">
                       <figure>
                         <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
+                        <!-- <img class="" src="<?php the_field("vista_previa_imagen") ?>" alt="" width="" height="" loading="lazy"> -->
                       </figure>
                       <div class="result__apartment-item__hover">
                         <button type="button" class="btn-show-modal no-border" data-target="modal-<?php echo $key; ?>">
                           <img class="" src="<?= IMG_BASE; ?>icons/icon-plus-circle.svg " alt="" width="" height="" loading="lazy">
                         </button>
-                        <button type="button" class="btn-show-modal" data-target="modal-<?php echo $key; ?>">
+                        <button style="opacity: 0" type="button" class="btn-show-modal" data-target="modal-<?php echo $key; ?>">
                           DESCRIPCIÓN DEL PROYECYO
                         </button>
                       </div>
@@ -64,7 +65,7 @@
                         <?php the_field("tipologia") ?>
                       </span>
                       <span class="text">
-                        <?php the_field("m2totales") ?> m²
+                        <?php the_field("m2_totales") ?> m²
                       </span>
                       <span class="text">
                         <img class="" src="<?= IMG_BASE; ?>icons/icon-dorm.svg" alt="" width="" height="" loading="lazy">
@@ -93,11 +94,11 @@
                             </div>
                             <div class="modal-content__info">
                               <h5 class="h3">Características</h5>
-                              <p class="text"> Área total: <?php the_field("m2totales") ?>  m²</p>
-                              <p class="text bckg"> Área propia: <?php the_field("m2internos") ?> m²</p>
-                              <p class="text"> Terraza cubierta: <?php the_field("m2terrcub") ?> m²</p>
-                              <p class="text bckg"> Terraza descubierta: <?php the_field("m2terrdesc") ?> m²</p>
-                              <p class="text"> Espacios comunes: <?php the_field("m2espcomunes") ?> m²</p>
+                              <p class="text"> Área total: <?php the_field("m2_totales") ?>  m²</p>
+                              <p class="text bckg"> Área propia: <?php the_field("m2_internos") ?> m²</p>
+                              <p class="text"> Terraza cubierta: <?php the_field("m2_terr_cub") ?> m²</p>
+                              <p class="text bckg"> Terraza descubierta: <?php the_field("m2_terr_desc") ?> m²</p>
+                              <p class="text"> Espacios comunes: <?php the_field("m2_esp_comunes") ?> m²</p>
                               
                             </div>
                           </div>
@@ -108,11 +109,7 @@
                           <?= do_shortcode('[contact-form-7 id="1381" title="Formulario Propiedad" html_class="contact-form"]') ?>
                           <p id="display-price" class="display-price">
                             USD 
-                            <?php 
-                              $precious = get_field("precious");
-                              $formatted_precious = number_format($precious, 0, ".", "."); 
-                              echo '$', $formatted_precious;
-                            ?>
+                            <?= get_field("precio"); ?>
                           </p>
                         </footer>
                       </div>
@@ -170,14 +167,28 @@
     </section>
 
   <?php } else if ($type == 'local' || $type == 'oficina') { ?>
-    <section class="result__local">
+    <section class="result__local <?php if ($type == 'oficina') { ?>padding<?php } ?>">
+      <?php if ($type == 'local') { ?>
+        <h2 class="h2 title">
+          <figure style="margin-bottom: 2rem">
+            <img src="/wp-content/uploads/banner-locales-comerciales-scaled.jpeg" alt="">
+          </figure>
+        </h2>
+      <?php } ?>
+      
       <div class="container">
         <div class="result__local-wrapper">
           <div class="result__local-loop">
             <div class="desk">
-              <h2 class="h2 title">
-                Locales Comerciales
-              </h2>
+              <?php if ($type == 'local') { ?>
+                <h2 class="h2 title">
+                  Locales Comerciales
+                </h2>
+              <?php } else { ?>
+                <h2 class="h2 title">
+                  Oficinas
+                </h2>
+              <?php } ?>
               <p class="text count">
                 <?php 
                   if ( $query->have_posts() ) { 
@@ -200,22 +211,20 @@
                     <figure>
                       <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
                     </figure>
-                    <span class="status"><?php the_field("condicin") ?></span>
+                    <span class="status"><?php the_field("condicion_avance_de_obra") ?></span>
                     <div class="info">
                       <div class="bottom">
                         <!-- <span class="view">ver más</span> -->
-                        <h5 class="name"><?php the_field("condicin") ?></h5>
+                        <h5 class="name"><?php the_field("nombre_del_proyecto") ?> - <?php the_field("unidad") ?></h5>
+                        <p class="text"><?php the_field("direccion") ?></p>
                         <p class="text"><?php the_field("barrio") ?></p>
-                        <p class="text">Erevan - <?php the_field("condicin") ?></p>
-                        <p class="text metro"><?php the_field("m2totales") ?> m²</p>
+                        <p class="text metro"><?php the_field("m2_totales") ?> m²</p>
+                        <?php if(get_field("precio")) : ?>
                         <p class="price">
                           <strong>USD
-                          <?php 
-                            $precious = get_field("precious");
-                            $formatted_precious = number_format($precious, 0, ".", "."); 
-                            echo '$', $formatted_precious;
-                          ?>
+                          <?= get_field("precio"); ?>
                           </strong></p>
+                        <?php endif; ?>
                       </div>
                     </div>
                   </a>
