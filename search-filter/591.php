@@ -47,8 +47,7 @@
                   <li class="result__apartment-item">
                     <div class="result__apartment-item__img">
                       <figure>
-                        <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
-                        <!-- <img class="" src="<?php the_field("vista_previa_imagen") ?>" alt="" width="" height="" loading="lazy"> -->
+                        <img class="" src="<?= get_field("vista_previa_imagen"); ?>" alt="" width="" height="" loading="lazy">
                       </figure>
                       <div class="result__apartment-item__hover">
                         <button type="button" class="btn-show-modal no-border" data-target="modal-<?php echo $key; ?>">
@@ -88,7 +87,7 @@
                               <span class="line"></span>
                               <p class="h4">Apartamento: <span class="red"><?= the_title();?></span></p>
                               <figure class="modal-content__img">
-                                <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
+                                <img class="" src="<?= get_field("vista_previa_imagen"); ?>" alt="" width="" height="" loading="lazy">
                               </figure>
                               
                             </div>
@@ -109,7 +108,11 @@
                           <?= do_shortcode('[contact-form-7 id="1381" title="Formulario Propiedad" html_class="contact-form"]') ?>
                           <p id="display-price" class="display-price">
                             USD 
-                            <?= get_field("precio"); ?>
+                            <?= 
+                            $precio = get_field("precio"); // Obtener el valor del campo "precio"
+                            $formatted_precio = number_format($precio, 2); // Formatear el valor con 2 decimales
+                            echo $formatted_precio;
+                            ?>
                           </p>
                         </footer>
                       </div>
@@ -207,9 +210,9 @@
               <?php if ( $query->have_posts() ) { ?>
                 <?php while ($query->have_posts()) { $query->the_post(); ?>
                   <?php $key++; ?>
-                  <a href="<?= the_permalink(); ?>" class="result__local-item">
+                  <div class="result__local-item">
                     <figure>
-                      <img class="" src="<?= IMG_BASE; ?>placeholder-tipologia.png" alt="" width="" height="" loading="lazy">
+                      <img class="" src="<?= get_field("vista_previa_imagen"); ?>" alt="" width="" height="" loading="lazy">
                     </figure>
                     <span class="status"><?php the_field("condicion_avance_de_obra") ?></span>
                     <div class="info">
@@ -222,12 +225,16 @@
                         <?php if(get_field("precio")) : ?>
                         <p class="price">
                           <strong>USD
-                          <?= get_field("precio"); ?>
+                          <?php
+                            $precio = get_field("precio");
+                            $formatted_precio = number_format($precio, 0, '.', '.');
+                            echo $formatted_precio;
+                            ?>
                           </strong></p>
                         <?php endif; ?>
                       </div>
                     </div>
-                  </a>
+                  </div>
                   <?php } ?>
 
                   <div class="pagination">

@@ -99,6 +99,25 @@ if ( ! function_exists( 'altius_theme_setup' ) ) {
 				}, false );
 			</script>
 		<?php }
+
+		// change logo login WP
+		function custom_login_logo() {
+			$upload_dir = wp_upload_dir();
+			$upload_url = ( $upload_dir['url'] );
+			echo '<style type="text/css">
+					.login h1 a {
+							background-image: url(' . $upload_url . '/logo-red.svg) !important;
+							background-size: contain !important;
+							width: 100% !important;
+							height: 100px !important;
+					}
+			</style>';
+		}
+		add_action('login_head', 'custom_login_logo');
+
+		
+		
+
 	}
 }
 add_action( 'after_setup_theme', 'altius_theme_setup' );

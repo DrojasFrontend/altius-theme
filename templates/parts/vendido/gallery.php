@@ -6,7 +6,7 @@
       <?php foreach( $media as $item ): ?>
         <li class="swiper-slide">
           <?php if ($item['type'] == 'image') : ?>
-            <img src="<?php echo esc_url($item['sizes']['large']); ?>" alt="<?php echo esc_attr($item['alt']); ?>" />
+            <img src="<?php echo esc_url($item['url']); ?>" alt="<?php echo esc_attr($item['alt']); ?>" />
           <?php elseif ($item['type'] == 'video') : ?>
             <video controls id="myVideo">
               <source src="<?php echo esc_url($item['url']); ?>" type="<?php echo esc_attr($item['mime_type']); ?>">
@@ -32,7 +32,7 @@
             <?php foreach( $media as $item ): ?>
               <li class="swiper-slide">
                 <?php if ($item['type'] == 'image') : ?>
-                  <img src="<?php echo esc_url($item['sizes']['medium']); ?>" alt="<?php echo esc_attr($item['alt']); ?>" />
+                  <img src="<?php echo esc_url($item['sizes']['large']); ?>" alt="<?php echo esc_attr($item['alt']); ?>" />
                 <?php elseif ($item['type'] == 'video') : ?>
                   <div class="video">
                     <img class="play" class="" src="<?= IMG_BASE; ?>icons/icon-play-new.png" alt="prev" width="" height="" loading="lazy">

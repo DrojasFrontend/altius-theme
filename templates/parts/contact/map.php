@@ -343,7 +343,7 @@ function geoSuccess(position) {
         position: position,
         map: map,
         icon: {
-          url: "http://altius.local/wp-content/uploads/pin-map.svg",
+          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[i][0],
@@ -355,7 +355,7 @@ function geoSuccess(position) {
         position: position,
         map: map,
         icon: {
-          url: "http://altius.local/wp-content/uploads/pin-map.svg",
+          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[i][0],
@@ -487,7 +487,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -504,7 +504,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -516,7 +516,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -541,7 +541,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
         position: position,
         map: map,
         icon: {
-          url: "http://altius.local/wp-content/uploads/pin-map.svg",
+          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[0][0],
@@ -678,7 +678,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -695,7 +695,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -708,7 +708,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
             position: position,
             map: map,
             icon: {
-              url: "http://altius.local/wp-content/uploads/pin-map.svg",
+              url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
               scaledSize: new google.maps.Size(90, 60),
             },
             title: markers[i][0],
@@ -753,7 +753,7 @@ function initMap(is_mobile, actual_project, init, projects, all) {
         position: position,
         map: map,
         icon: {
-          url: "http://altius.local/wp-content/uploads/pin-map.svg",
+          url: "https://nuevo.altius.com.uy/wp-content/uploads/pin-map.svg",
           scaledSize: new google.maps.Size(90, 60),
         },
         title: markers[0][0],
@@ -840,8 +840,8 @@ projects = [
 ];
 
 let actual_project = null;
-let url_star = "https://www.altius.com.uy/page_assets/img/star.png";
-let url_circle = "https://www.altius.com.uy/page_assets/img/circle.png";
+let url_star = "https://nuevo.altius.com.uy/page_assets/img/star.png";
+let url_circle = "https://nuevo.altius.com.uy/page_assets/img/circle.png";
 
 $("#places-input").on("keydown", (e) => {
   if (event.which == 13 || e.KeyCode == 13) e.preventDefault();
@@ -896,7 +896,7 @@ var document_width = $(document).width(),
       </div>
     </div>
     <div id="map"></div>
-    <button id="close-indications" class="close-indications d-none">
+    <button id="close-indications" class="close-indications d-none" aria-label="close map">
       <img class="" src="<?= IMG_BASE; ?>icon-next-ligh.png" alt="" width="" height="" loading="lazy">
     </button>
     <div class="indications-box d-none">

@@ -1,12 +1,12 @@
 var jSearchFilter = (function ($) {  
 
   if ($('body').hasClass('home')) {
-    var radioBtnType2 = $('.sf-item-194 input[name="_sft_tipo[]"]');
+    var radioBtnType2 = $('.sf-field-taxonomy-tipo ul li:nth-child(2) input[name="_sft_tipo[]"]');
     radioBtnType2.prop("checked", true);
   }
 
   if ($('body').hasClass('single')) {
-    var radioBtnType2 = $('.sf-item-194 input[name="_sft_tipo[]"]');
+    var radioBtnType2 = $('.sf-field-taxonomy-tipo ul li:nth-child(2) input[name="_sft_tipo[]"]');
     radioBtnType2.prop("checked", true);
   }
 
