@@ -108,10 +108,10 @@
                           <?= do_shortcode('[contact-form-7 id="1381" title="Formulario Propiedad" html_class="contact-form"]') ?>
                           <p id="display-price" class="display-price">
                             USD 
-                            <?= 
-                            $precio = get_field("precio"); // Obtener el valor del campo "precio"
-                            $formatted_precio = number_format($precio, 2); // Formatear el valor con 2 decimales
-                            echo $formatted_precio;
+                            <?php
+                              $precio = get_field("precio");
+                              $formatted_precio = number_format($precio, 0, '.', '.');
+                              echo $formatted_precio;
                             ?>
                           </p>
                         </footer>
@@ -210,7 +210,7 @@
               <?php if ( $query->have_posts() ) { ?>
                 <?php while ($query->have_posts()) { $query->the_post(); ?>
                   <?php $key++; ?>
-                  <div class="result__local-item">
+                  <a href="<?= the_permalink(); ?>" class="result__local-item">
                     <figure>
                       <img class="" src="<?= get_field("vista_previa_imagen"); ?>" alt="" width="" height="" loading="lazy">
                     </figure>
@@ -234,7 +234,7 @@
                         <?php endif; ?>
                       </div>
                     </div>
-                  </div>
+                  </a>
                   <?php } ?>
 
                   <div class="pagination">

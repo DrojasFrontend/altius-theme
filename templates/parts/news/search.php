@@ -5,6 +5,13 @@ $terms = get_terms( array(
   'taxonomy' => 'category',
   'object_type' => 'noticia',
 ) );
+
+// Eliminar la categoría "Uncategorized" del arreglo de términos
+foreach ($terms as $key => $term) {
+    if ($term->slug === 'uncategorized') {
+        unset($terms[$key]);
+    }
+}
 ?>
 <div class="news__search-bckg" style="background-color: <?= $fields['news_bckg_color_main']; ?>">
   <div class="container">

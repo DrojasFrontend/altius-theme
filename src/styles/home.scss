@@ -448,15 +448,29 @@
 
         ul {
           display: none;
+          height: 10rem;
           padding: 0.5rem 1rem;
           background: rgba(0, 0, 0, 0.51);
           box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
           backdrop-filter: blur(8.5px);
+          overflow-y: auto;
+
+          @include breakpoint(large-desktop) {
+            height: auto;
+            overflow: inherit;
+          }
         }
 
         li {
           display: flex;
           align-items: center;
+        }
+      }
+
+      [class^="sf-field-taxonomy-ciudad"] {
+        .clean, 
+        .accept {
+          display: none;
         }
       }
 
@@ -468,7 +482,7 @@
 
       .clean,
       .accept {
-        width: 47%;
+        width: 45%;
         margin-top: 1rem;
         padding: 0.5rem;
         background-color: transparent;

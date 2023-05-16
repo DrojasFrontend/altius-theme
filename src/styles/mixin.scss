@@ -14,4 +14,7 @@
   @else if $point == xxl-desktop {
     @media (min-width: 1280px) { @content; }
   }
+  @else if $point == full-desktop {
+    @media (min-width: 1440px) { @content; }
+  }
 }

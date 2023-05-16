@@ -336,6 +336,14 @@
     }
 
     &-filter {
+
+      [class^="sf-field-taxonomy-ciudad"] {
+        .clean, 
+        .accept {
+          display: none;
+        }
+      }
+      
       &__shortcode,
       &__form {
         padding: 1rem 1.5rem;

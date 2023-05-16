@@ -6,7 +6,7 @@ class MainNavWalker extends Walker_Nav_Menu {
 
     if ($max_depth == 0) { ?>
       <div class="menu__item <?php echo $is_current_page ? 'current-menu-item' : ''; ?>">
-        <a class="menu__item-link text-bold <?php if (isset($children_elements[$item->ID])) { ?> has-menu <?php } ?>" href="<?php echo $item->url; ?>">
+        <a class="menu__item-link text-bold <?php if (isset($children_elements[$item->ID])) { ?> has-menu <?php } ?>" href="<?php echo $item->url; ?>" target="<?php echo $item->target; ?>">
           <?php echo $item->title ?>
         </a>
         <?php if (isset($children_elements[$item->ID])) { ?>
