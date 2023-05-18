@@ -3,11 +3,13 @@
  * The template for displaying all single posts and attachments
  */
  
-get_header(); ?>
+get_header(); 
+$header = get_field('vista_previa_imagen_detalle');
+?>
 
 <div class="properties">
   <?php while ( have_posts() ) : the_post(); ?>
-    <section class="properties__swiper">
+    <!-- <section class="properties__swiper">
       <div class="swiper-top swiper">
         <ul class="swiper-wrapper">
           <li class="swiper-slide">
@@ -36,7 +38,9 @@ get_header(); ?>
           </button>
         </div>
       </div>
-    </section>
+    </section> -->
+
+    <section class="properties__header" style="background-image: url(<?= $header ?>)"></section>
     <section class="properties__detail">
       <div class="container">
         <div class="properties__detail-wrapper">
@@ -87,11 +91,21 @@ get_header(); ?>
                         </div>
                         <div class="modal-content__info">
                           <h5 class="h3">Características</h5>
-                          <p class="text"> Área total: <?php the_field("m2_totales") ?>  m²</p>
-                          <p class="text bckg"> Área propia: <?php the_field("m2_internos") ?> m²</p>
-                          <p class="text"> Terraza cubierta: <?php the_field("m2_terr_cub") ?> m²</p>
-                          <p class="text bckg"> Terraza descubierta: <?php the_field("m2_terr_desc") ?> m²</p>
-                          <p class="text"> Espacios comunes: <?php the_field("m2_esp_comunes") ?> m²</p>
+                          <?php if (get_field("m2_totales")) : ?>
+                            <p class="text"> Área total: <?php the_field("m2_totales") ?>  m²</p>
+                          <? endif; ?>
+                          <?php if (get_field("m2_internos")) : ?>
+                            <p class="text bckg"> Área propia: <?php the_field("m2_internos") ?> m²</p>
+                          <? endif; ?>
+                          <?php if (get_field("m2_terr_cub")) : ?>
+                            <p class="text"> Terraza cubierta: <?php the_field("m2_terr_cub") ?> m²</p>
+                          <? endif; ?>
+                          <?php if (get_field("m2_terr_desc")) : ?>
+                            <p class="text bckg"> Terraza descubierta: <?php the_field("m2_terr_desc") ?> m²</p>
+                          <? endif; ?>
+                          <?php if (get_field("m2_esp_comunes")) : ?>
+                            <p class="text"> Espacios comunes: <?php the_field("m2_esp_comunes") ?> m²</p>
+                          <? endif; ?>
                           
                         </div>
                       </div>
@@ -103,10 +117,12 @@ get_header(); ?>
 
             <div class="properties__detail-bottom">
               <p class="text">Tipo de propiedad: <strong><?php the_field("tipo") ?></strong></p>
-              <h4 class="h3">Descripción</h4>
-              <p class="text">
-                <?= get_field("descripcion_locales"); ?>
-              </p>
+              <?php if (get_field("descripcion_locales")) : ?>
+                <h4 class="h3">Descripción</h4>
+                <div class="text">
+                  <?= the_field("descripcion_locales"); ?>
+                </div>
+              <? endif; ?>
             </div>
           </div>
           <div>
