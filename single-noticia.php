@@ -72,13 +72,13 @@ $fields = get_fields();
 
           <?php if ( is_active_sidebar( 'siedebar_widget_1' ) ) : ?>
             <div class="section">
-              <h3 class="h3 center">REDES SOCIALES</h3>
+              <h3 class="h3 center">Redes Sociales</h3>
 							<?php dynamic_sidebar( 'siedebar_widget_1' ); ?>
             </div>
           <?php endif; ?>
 
           <div class="section">
-            <h3 class="h3 center">RELEVANTES</h3>
+            <h3 class="h3 center">Relevantes</h3>
             <?php
               $args = array(
                 'post_type' => 'noticia',

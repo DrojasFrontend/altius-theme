@@ -189,7 +189,7 @@ input[type=number] {
     &-car {
       display: flex;
       align-items: center;
-      font: 500 1.2rem/1 "Roboto", sans-serif;
+      font: 500 1rem/1 "Roboto", sans-serif;
       width: 100%;
       margin-bottom: 1rem;
       text-transform: uppercase;
@@ -199,9 +199,9 @@ input[type=number] {
       cursor: pointer;
 
       @include breakpoint(large-desktop) {
-        width: 13.14rem;
+        width: 10.14rem;
         margin-bottom: 0;
-        font: 500 1.7rem/1 "Roboto", sans-serif;
+        font: 500 1rem/1 "Roboto", sans-serif;
       }
 
       &.active {
@@ -252,7 +252,7 @@ input[type=number] {
       border-bottom: 0.0625rem solid $color-white;
 
       @include breakpoint(large-desktop) {
-        font: 300 2rem/1 "Roboto", sans-serif;
+        font: 300 1.2rem/1 "Roboto", sans-serif;
       }
     }
 

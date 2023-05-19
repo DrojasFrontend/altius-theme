@@ -157,11 +157,11 @@
               </p>
             </div>
             <div class="result__apartment-filter__shortcode">
-              <h2 class="h3">BUSCÁ</h2>
+              <h2 class="h3">Buscá</h2>
               <?php echo do_shortcode('[searchandfilter id="591"]'); ?>
             </div>
             <div class="result__apartment-filter__form desk">
-              <h3 class="h3">CONTÁCTANOS</h3>
+              <h3 class="h3">Contáctanos</h3>
               <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
             </div>
           </div>
@@ -275,11 +275,11 @@
               </p>
             </div>
             <div class="result__apartment-filter__shortcode">
-              <h2 class="h3">BUSCÁ</h2>
+              <h2 class="h3">Buscá</h2>
               <?php echo do_shortcode('[searchandfilter id="591"]'); ?>
             </div>
             <div class="result__apartment-filter__form desk">
-              <h3 class="h3">CONTÁCTANOS</h3>
+              <h3 class="h3">Contáctanos</h3>
               <?= do_shortcode('[contact-form-7 id="1380" title="Formulario Contáctanos Filtro Sidebar"]'); ?>
             </div>
           </div>

@@ -186,7 +186,7 @@
             padding: 0.5rem 1rem 0.4rem;
 
             @include breakpoint(large-desktop) {
-              font: 600 2rem/1 "Roboto", sans-serif;
+              font: 600 1.5rem/1 "Roboto", sans-serif;
               padding: 0.5rem 0 0.4rem;
             }
           }
@@ -280,7 +280,7 @@
         background-color: $color-white;
 
         @include breakpoint(large-desktop) {
-          font: 300 1.7rem/1 "Roboto", sans-serif;
+          font: 300 1rem/1 "Roboto", sans-serif;
         }
       }
 
@@ -342,7 +342,7 @@
           background-color: $color-red;
 
           @include breakpoint(large-desktop) {
-            font: 500 1.3rem/1 "Roboto", sans-serif;
+            font: 500 1rem/1 "Roboto", sans-serif;
           }
         }
 
@@ -372,7 +372,7 @@
           margin-bottom: 0.7rem;
 
           @include breakpoint(large-desktop) {
-            font: 600 1.7rem/1 "Roboto", sans-serif;
+            font: 600 1.2rem/1 "Roboto", sans-serif;
           }
         }
 
@@ -383,7 +383,7 @@
           text-align: justify;
 
           @include breakpoint(large-desktop) {
-            font: 300 1.5rem/1 "Roboto", sans-serif;
+            font: 300 1rem/1 "Roboto", sans-serif;
           }
         }
       }

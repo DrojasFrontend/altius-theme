@@ -7,7 +7,7 @@
   <div class="apartment__amenities-wrapper">
     <div>
       <div class="apartment__amenities-title">
-        <h2 class="h2">AMENITIES</h2>
+        <h2 class="h2">Amenities</h2>
       </div>
       <div class="apartment__amenities-items">
         <?php

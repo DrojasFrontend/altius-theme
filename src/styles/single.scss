@@ -149,7 +149,7 @@
         text-align: justify;
 
         @include breakpoint(large-desktop) {
-          font: 400 1.3rem/1.5 "Roboto", sans-serif;
+          font: 400 1rem/1.5 "Roboto", sans-serif;
         }
       }
 
@@ -1020,7 +1020,7 @@
         z-index: 1;
 
         @include breakpoint(large-desktop) {
-          font: 600 1.7rem/1 "Roboto", sans-serif;
+          font: 600 1rem/1 "Roboto", sans-serif;
         }
 
         &:hover {
